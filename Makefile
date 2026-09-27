@@ -16,7 +16,7 @@ test:
 frontend:
 	cd frontend && npm run build
 docs:
-	$(PYTHON) -m sphinx -W -b html docs docs/_build/html
+	$(PYTHON) -m scripts.build_docs
 up:
 	$(PYTHON) -m scripts.stack up
 down:

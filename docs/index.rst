@@ -1,41 +1,37 @@
 Предиктор отклонений транспорта
-============================================================
+==========================================================================================
 
-Система состоит из независимых Backend, ML-сервиса и веб-дашборда.
-Инструкции запуска находятся в README.md корня проекта.
-Описание архитектуры — в docs/architecture.md, сценарии проверки —
-в docs/demo.md. Спецификация REST API генерируется FastAPI на /docs
-и /openapi.json каждого Python-сервиса.
+Три независимых модуля: ML-сервис, Backend и веб-дашборд. PostgreSQL хранит
+телеметрию, прогнозы и отметки просмотра. Прогноз относится к первой ещё не
+посещённой остановке в окне 10–15 минут до её планового прибытия.
 
-Общие признаки и входные данные
-------------------------------------------------------------
+Материалы для жюри
+------------------------------------------------------------------------------------------
 
-.. automodule:: predictor.features
-   :members:
+* `Репозиторий и быстрый запуск <https://github.com/mdvdv177/hackaton_v2>`_
+* `Инструкция жюри <https://github.com/mdvdv177/hackaton_v2/blob/main/JURY.md>`_
+* `Производительность и дополнительные возможности <https://github.com/mdvdv177/hackaton_v2/blob/main/PERFORMANCE.md>`_
+* `Submission CSV <https://github.com/mdvdv177/hackaton_v2/blob/main/artifacts/submission.csv>`_
+* `Архитектура <https://github.com/mdvdv177/hackaton_v2/blob/main/docs/architecture.md>`_
 
-.. automodule:: predictor.data
-   :members:
+Документация API
+------------------------------------------------------------------------------------------
 
-.. automodule:: predictor.observer
-   :members:
+* `Backend Swagger <api/backend/index.html>`_
+* `Backend OpenAPI JSON <api/backend/openapi.json>`_
+* `ML Swagger <api/ml/index.html>`_
+* `ML OpenAPI JSON <api/ml/openapi.json>`_
 
-.. automodule:: predictor.stream_features
-   :members:
+Это статическая справка с актуальными схемами обоих FastAPI-приложений.
+Для выполнения запросов запустите Docker-стек и откройте Backend Swagger
+на http://localhost:8010/docs. ML доступен только внутри Docker-сети.
+Кнопки выполнения запросов на публичной странице отключены.
 
-Протокол NDTP
--------------
+Swagger UI загружает JavaScript и CSS из CDN; JSON-схемы доступны отдельно.
+Сборка документации не запускает сервер, NDTP listener или базу данных.
 
-.. automodule:: backend.ndtp
-   :members:
+.. toctree::
+   :maxdepth: 2
+   :caption: Документация по коду
 
-Безопасный импорт Backend
-------------------------------------------------------------
-
-.. automodule:: backend.data
-   :members:
-
-.. automodule:: backend.scenarios
-   :members:
-
-.. automodule:: backend.storage
-   :members: Store
+   modules
