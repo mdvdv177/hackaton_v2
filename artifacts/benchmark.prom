@@ -1,0 +1,17 @@
+dispatcher_active_vehicles 16
+dispatcher_stale_vehicles 0
+dispatcher_queue_depth 0
+dispatcher_processing_latency_p95_ms 339.79
+dispatcher_telemetry_per_second 56.79
+dispatcher_ndtp_errors 0
+dispatcher_telemetry_count 3425
+dispatcher_duplicates 0
+dispatcher_late_events 322
+dispatcher_unknown_devices 0
+dispatcher_ml_failures 0
+dispatcher_predictions_count 307
+dispatcher_processing_latency_ms 209.72
+dispatcher_invalid_events 0
+dispatcher_ignored_live_events 0
+dispatcher_dropped_live_events 0
+dispatcher_database_ready 1

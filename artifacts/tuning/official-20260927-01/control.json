@@ -1,0 +1,48 @@
+{
+  "result": {
+    "config_id": "control",
+    "seed": 20260926,
+    "status": "complete",
+    "folds": [
+      {
+        "fold": 0,
+        "mae_s": 73.43100476006346,
+        "n": 203,
+        "iterations": 400,
+        "inner_iterations": null,
+        "inner_split": null
+      },
+      {
+        "fold": 1,
+        "mae_s": 70.35007872424916,
+        "n": 204,
+        "iterations": 400,
+        "inner_iterations": null,
+        "inner_split": null
+      },
+      {
+        "fold": 2,
+        "mae_s": 88.93979637130465,
+        "n": 222,
+        "iterations": 400,
+        "inner_iterations": null,
+        "inner_split": null
+      }
+    ],
+    "pooled_mae_s": 77.90547666211343,
+    "elapsed_s": 2.233127292012796
+  },
+  "expected": {
+    "cohort": "real",
+    "mode": "residual",
+    "oof_mae_s": 77.90547666211343,
+    "fold_mae_s": [
+      73.43100476006346,
+      70.35007872424916,
+      88.93979637130465
+    ],
+    "eligible_for_selection": true
+  },
+  "tolerance_s": 0.01,
+  "max_difference_s": 0.0
+}

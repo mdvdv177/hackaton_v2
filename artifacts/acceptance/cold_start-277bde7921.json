@@ -1,0 +1,1142 @@
+{
+  "created_at": "2026-09-26T17:43:23.209836+00:00",
+  "environment": {
+    "docker": "ready",
+    "compose": [
+      "/opt/homebrew/bin/docker",
+      "compose"
+    ],
+    "model_profiles": [
+      "official",
+      "stream"
+    ],
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "docker_info": {
+      "cpus": 8,
+      "memory_bytes": 4106604544,
+      "server_version": "29.8.0",
+      "architecture": "aarch64"
+    }
+  },
+  "ready_limit_s": 60,
+  "requested_runs": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "project": "transport-cold-7d5a8143ff0f-1",
+      "ports": {
+        "BACKEND_PORT": "53474",
+        "DASHBOARD_PORT": "53475",
+        "NDTP_PORT": "53476",
+        "EMULATOR_PORT": "53477"
+      },
+      "fresh_volume": true,
+      "images_prebuilt": true,
+      "started_at": "2026-09-26T17:43:24.796249+00:00",
+      "passed": true,
+      "http_checks": {
+        "backend_ready": 200,
+        "dashboard": 200,
+        "swagger": 200,
+        "openapi": 200
+      },
+      "all_services_ready_s": 17.55876500000886,
+      "ready_within_limit": true,
+      "services": [
+        {
+          "Command": "\"python -m uvicorn b…\"",
+          "CreatedAt": "2026-09-26 20:43:25 +0300 MSK",
+          "Engine": "",
+          "ExitCode": 0,
+          "Health": "healthy",
+          "ID": "1caf3eac6c95",
+          "Image": "transport-predictor-python:local",
+          "Labels": "com.docker.compose.config-hash=8e503d06d3a4eb4431b97bd848a9e14b152e2aac735234833e6c856ec4964cd8,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/0/Target=/app/dataset,desktop.docker.io/ports/9201/tcp=:53476,com.docker.compose.project=transport-cold-7d5a8143ff0f-1,com.docker.compose.project.config_files=/Users/snaker177/Documents/Projects/hackaton_end2end/compose.yaml,com.docker.compose.service=backend,desktop.docker.io/binds/0/Source=/Users/snaker177/Documents/Projects/hackaton_end2end/dataset,desktop.docker.io/ports.scheme=v2,com.docker.compose.container-number=1,com.docker.compose.depends_on=ml:service_healthy:false,postgres:service_healthy:false,com.docker.compose.image=sha256:7529ce3a3bd2df5521f2b1940a643815b183a478e423d2cb6880afa76cbea913,com.docker.compose.project.working_dir=/Users/snaker177/Documents/Projects/hackaton_end2end,com.docker.compose.version=5.5.1,desktop.docker.io/ports/8000/tcp=:53474,com.docker.compose.oneoff=False",
+          "LocalVolumes": "0",
+          "Mounts": "/host_mnt/User…",
+          "Name": "transport-cold-7d5a8143ff0f-1-backend-1",
+          "Names": "transport-cold-7d5a8143ff0f-1-backend-1",
+          "Networks": "transport-cold-7d5a8143ff0f-1_default",
+          "Ports": "0.0.0.0:53474->8000/tcp, [::]:53474->8000/tcp, 0.0.0.0:53476->9201/tcp, [::]:53476->9201/tcp",
+          "Project": "transport-cold-7d5a8143ff0f-1",
+          "Publishers": [
+            {
+              "URL": "0.0.0.0",
+              "TargetPort": 8000,
+              "PublishedPort": 53474,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "::",
+              "TargetPort": 8000,
+              "PublishedPort": 53474,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "0.0.0.0",
+              "TargetPort": 9201,
+              "PublishedPort": 53476,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "::",
+              "TargetPort": 9201,
+              "PublishedPort": 53476,
+              "Protocol": "tcp"
+            }
+          ],
+          "RunningFor": "17 seconds ago",
+          "Service": "backend",
+          "Size": "0B",
+          "State": "running",
+          "Status": "Up 11 seconds (healthy)"
+        },
+        {
+          "Command": "\"/docker-entrypoint.…\"",
+          "CreatedAt": "2026-09-26 20:43:25 +0300 MSK",
+          "Engine": "",
+          "ExitCode": 0,
+          "Health": "healthy",
+          "ID": "d2d4a643b934",
+          "Image": "transport-predictor-frontend:local",
+          "Labels": "com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/Users/snaker177/Documents/Projects/hackaton_end2end/compose.yaml,com.docker.compose.project.working_dir=/Users/snaker177/Documents/Projects/hackaton_end2end,com.docker.compose.service=frontend,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2,com.docker.compose.config-hash=ca1c6db6ab9797b7f130e71c88d37f3881ee5f73544e8da40bc05152ae742400,com.docker.compose.depends_on=backend:service_healthy:false,com.docker.compose.project=transport-cold-7d5a8143ff0f-1,desktop.docker.io/ports/80/tcp=:53475,maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>,com.docker.compose.container-number=1,com.docker.compose.image=sha256:a6a1a6971b72297858eeb98d08da09bc7a0b38fe10b0f98e1fd941c0d5a1e202",
+          "LocalVolumes": "0",
+          "Mounts": "",
+          "Name": "transport-cold-7d5a8143ff0f-1-frontend-1",
+          "Names": "transport-cold-7d5a8143ff0f-1-frontend-1",
+          "Networks": "transport-cold-7d5a8143ff0f-1_default",
+          "Ports": "0.0.0.0:53475->80/tcp, [::]:53475->80/tcp",
+          "Project": "transport-cold-7d5a8143ff0f-1",
+          "Publishers": [
+            {
+              "URL": "0.0.0.0",
+              "TargetPort": 80,
+              "PublishedPort": 53475,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "::",
+              "TargetPort": 80,
+              "PublishedPort": 53475,
+              "Protocol": "tcp"
+            }
+          ],
+          "RunningFor": "17 seconds ago",
+          "Service": "frontend",
+          "Size": "0B",
+          "State": "running",
+          "Status": "Up 5 seconds (healthy)"
+        },
+        {
+          "Command": "\"python -m uvicorn m…\"",
+          "CreatedAt": "2026-09-26 20:43:25 +0300 MSK",
+          "Engine": "",
+          "ExitCode": 0,
+          "Health": "healthy",
+          "ID": "8950d346ff78",
+          "Image": "transport-predictor-python:local",
+          "Labels": "com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/Users/snaker177/Documents/Projects/hackaton_end2end/compose.yaml,com.docker.compose.service=ml,com.docker.compose.version=5.5.1,desktop.docker.io/binds/0/Source=/Users/snaker177/Documents/Projects/hackaton_end2end/artifacts/models,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/ports.scheme=v2,com.docker.compose.config-hash=9c90bc504c64b5b6d5d1e9d3783dc963071b4d152df7957f31a0037a87682393,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.project=transport-cold-7d5a8143ff0f-1,com.docker.compose.project.working_dir=/Users/snaker177/Documents/Projects/hackaton_end2end,desktop.docker.io/binds/0/Target=/app/artifacts/models,com.docker.compose.image=sha256:7529ce3a3bd2df5521f2b1940a643815b183a478e423d2cb6880afa76cbea913",
+          "LocalVolumes": "0",
+          "Mounts": "/host_mnt/User…",
+          "Name": "transport-cold-7d5a8143ff0f-1-ml-1",
+          "Names": "transport-cold-7d5a8143ff0f-1-ml-1",
+          "Networks": "transport-cold-7d5a8143ff0f-1_default",
+          "Ports": "8000-8001/tcp, 9201/tcp",
+          "Project": "transport-cold-7d5a8143ff0f-1",
+          "Publishers": [
+            {
+              "URL": "",
+              "TargetPort": 8000,
+              "PublishedPort": 0,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "",
+              "TargetPort": 8001,
+              "PublishedPort": 0,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "",
+              "TargetPort": 9201,
+              "PublishedPort": 0,
+              "Protocol": "tcp"
+            }
+          ],
+          "RunningFor": "17 seconds ago",
+          "Service": "ml",
+          "Size": "0B",
+          "State": "running",
+          "Status": "Up 17 seconds (healthy)"
+        },
+        {
+          "Command": "\"docker-entrypoint.s…\"",
+          "CreatedAt": "2026-09-26 20:43:25 +0300 MSK",
+          "Engine": "",
+          "ExitCode": 0,
+          "Health": "healthy",
+          "ID": "4e92eac48b2f",
+          "Image": "postgres:17-alpine",
+          "Labels": "com.docker.compose.project.config_files=/Users/snaker177/Documents/Projects/hackaton_end2end/compose.yaml,com.docker.compose.service=postgres,com.docker.compose.image=sha256:0b2882c46a2b8d8e148431b333394348cf4d7f15aec6df7f17d51dc641e56cfa,com.docker.compose.project=transport-cold-7d5a8143ff0f-1,com.docker.compose.project.working_dir=/Users/snaker177/Documents/Projects/hackaton_end2end,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2,com.docker.compose.config-hash=7345068c84104c9517b037f98ee77967e37ab80c4c65fdf0c606c0e80c266db4,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.oneoff=False",
+          "LocalVolumes": "1",
+          "Mounts": "transport-cold…",
+          "Name": "transport-cold-7d5a8143ff0f-1-postgres-1",
+          "Names": "transport-cold-7d5a8143ff0f-1-postgres-1",
+          "Networks": "transport-cold-7d5a8143ff0f-1_default",
+          "Ports": "5432/tcp",
+          "Project": "transport-cold-7d5a8143ff0f-1",
+          "Publishers": [
+            {
+              "URL": "",
+              "TargetPort": 5432,
+              "PublishedPort": 0,
+              "Protocol": "tcp"
+            }
+          ],
+          "RunningFor": "17 seconds ago",
+          "Service": "postgres",
+          "Size": "0B",
+          "State": "running",
+          "Status": "Up 17 seconds (healthy)"
+        }
+      ],
+      "pipeline": {
+        "passed": true,
+        "run_id": "7af20510-1f62-4c78-9f8e-e72217c9559c",
+        "scenario_id": "load-20260926T174343014865:920f0106eaa9f95d0fbf",
+        "model_profile": "stream",
+        "model_version": "stream-9a3614b81bad",
+        "prediction_id": "7af20510-1f62-4c78-9f8e-e72217c9559c:load-000_1790444623.581175",
+        "publication_horizon_s": 629.327156,
+        "first_model_prediction_s": 0.5156756670039613,
+        "first_prediction_ui_s": 0.6579182080022292,
+        "rendered_event_id": 2,
+        "tcp_packets_sent": 1,
+        "sender_connections": 1,
+        "sender_failures": 0,
+        "snapshot_polls": 3,
+        "browser_errors": [],
+        "system": {
+          "backend_status": "ok",
+          "ml_status": "ready",
+          "model_version": "stream-9a3614b81bad",
+          "active_vehicles": 1,
+          "stale_vehicles": 0,
+          "queue_depth": 0,
+          "ingress_queue_depth": 0,
+          "durable_queue_depth": 0,
+          "apply_queue_depth": 0,
+          "apply_lag_s": 0,
+          "ml_queue_depth": 0,
+          "ml_inflight": 0,
+          "ingress_queue_capacity": 5000,
+          "processing_latency_p95_ms": 111.41,
+          "ingress_latency_p95_ms": 132.5189169992882,
+          "prediction_stages_ms": {
+            "scheduler_wait_ms": 1.194,
+            "snapshot_ms": 0.038,
+            "feature_build_ms": 1.036,
+            "feature_wait_ms": 0.163,
+            "inference_ms": 98.461,
+            "candidate_commit_ms": 5.471,
+            "publication_ms": 0.42,
+            "final_commit_ms": 5.754,
+            "total_ms": 111.41
+          },
+          "prediction_stages_cutoff_at": "2026-09-26T17:43:43.581175+00:00",
+          "opportunity_count": 0,
+          "covered_opportunities": 0,
+          "model_covered_opportunities": 0,
+          "eligible_opportunity_count": 1,
+          "immature_opportunity_count": 1,
+          "opportunity_coverage": null,
+          "model_opportunity_coverage": null,
+          "telemetry_per_second": 1.18,
+          "last_error": null,
+          "ndtp_errors": 0,
+          "ndtp": {
+            "connections": 1,
+            "active_connections": 1,
+            "handshakes": 1,
+            "frames": 2,
+            "events": 1
+          },
+          "telemetry_count": 1,
+          "duplicates": 0,
+          "late_events": 0,
+          "unknown_devices": 0,
+          "ml_failures": 0,
+          "predictions_count": 1,
+          "processing_latency_ms": 111.41,
+          "invalid_events": 0,
+          "ignored_live_events": 0,
+          "dropped_live_events": 0,
+          "ingress_admitted": 1,
+          "ingress_committed": 1,
+          "ingress_rejected": 0,
+          "backpressure_waits": 0,
+          "suppressed_horizon": 0,
+          "suppressed_observed": 0,
+          "suppressed_stale": 0,
+          "suppressed_superseded": 0,
+          "prediction_jobs_replaced": 0,
+          "published_predictions": 1,
+          "retrospective_predictions": 0,
+          "late_alerts": 0,
+          "max_ingress_queue_depth": 1,
+          "max_ml_batch_size": 1
+        },
+        "checks": [
+          "import current-date plan",
+          "real binary NDTP TCP",
+          "stream model result",
+          "publication horizon",
+          "SSE delivery",
+          "React rendered same prediction",
+          "vehicle detail model version"
+        ]
+      },
+      "first_prediction_ui_total_s": 19.21957954199752,
+      "first_prediction_ui_within_limit": true,
+      "within_limit": true,
+      "images": [
+        {
+          "ID": "sha256:6734be14d777d0b92ea4bcaea24bbbef43983c19a3345ef96f5d3414ab40d2d4",
+          "ContainerName": "transport-cold-7d5a8143ff0f-1-frontend-1",
+          "Repository": "transport-predictor-frontend",
+          "Tag": "local",
+          "Platform": "linux/arm64",
+          "Size": 76534614,
+          "Created": "2026-09-26T16:42:27.759538429Z",
+          "LastTagTime": "2026-09-26T16:48:51.864477634Z"
+        },
+        {
+          "ID": "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c",
+          "ContainerName": "transport-cold-7d5a8143ff0f-1-backend-1",
+          "Repository": "transport-predictor-python",
+          "Tag": "local",
+          "Platform": "linux/arm64",
+          "Size": 1408972679,
+          "Created": "2026-09-26T17:36:55.150873501Z",
+          "LastTagTime": "2026-09-26T17:36:55.203593959Z"
+        },
+        {
+          "ID": "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c",
+          "ContainerName": "transport-cold-7d5a8143ff0f-1-ml-1",
+          "Repository": "transport-predictor-python",
+          "Tag": "local",
+          "Platform": "linux/arm64",
+          "Size": 1408972679,
+          "Created": "2026-09-26T17:36:55.150873501Z",
+          "LastTagTime": "2026-09-26T17:36:55.203593959Z"
+        },
+        {
+          "ID": "sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+          "ContainerName": "transport-cold-7d5a8143ff0f-1-postgres-1",
+          "Repository": "postgres",
+          "Tag": "17-alpine",
+          "Platform": "linux/arm64/v8",
+          "Size": 414818382,
+          "Created": "2026-09-17T21:31:46.755310538Z",
+          "LastTagTime": "2026-09-26T15:01:00.972673133Z"
+        }
+      ],
+      "memory_snapshot": [
+        {
+          "BlockIO": "23.2MB / 0B",
+          "CPUPerc": "2.96%",
+          "Container": "1caf3eac6c95f2e8694733c1003f19c88fb522a12c524d72bde2abcff3dffc1b",
+          "ID": "1caf3eac6c95",
+          "MemPerc": "3.01%",
+          "MemUsage": "117.8MiB / 3.825GiB",
+          "Name": "transport-cold-7d5a8143ff0f-1-backend-1",
+          "NetIO": "95.7kB / 175kB",
+          "PIDs": "8"
+        },
+        {
+          "BlockIO": "877kB / 4.1kB",
+          "CPUPerc": "0.00%",
+          "Container": "d2d4a643b9348c484e315eaca563c38ab9466b441fe8c41fc2feb95ef0e51c82",
+          "ID": "d2d4a643b934",
+          "MemPerc": "0.20%",
+          "MemUsage": "7.855MiB / 3.825GiB",
+          "Name": "transport-cold-7d5a8143ff0f-1-frontend-1",
+          "NetIO": "52.3kB / 491kB",
+          "PIDs": "9"
+        },
+        {
+          "BlockIO": "30.8MB / 0B",
+          "CPUPerc": "0.19%",
+          "Container": "8950d346ff7828e5719bbf331d05a148329b829772502c33da4f87f63fd788e0",
+          "ID": "8950d346ff78",
+          "MemPerc": "3.48%",
+          "MemUsage": "136.3MiB / 3.825GiB",
+          "Name": "transport-cold-7d5a8143ff0f-1-ml-1",
+          "NetIO": "4.59kB / 1.29kB",
+          "PIDs": "14"
+        },
+        {
+          "BlockIO": "2.55MB / 52.8MB",
+          "CPUPerc": "1.88%",
+          "Container": "4e92eac48b2f931a2e77aa9d6673a6f4380eed9e58537d435a6d77b245328ddc",
+          "ID": "4e92eac48b2f",
+          "MemPerc": "0.80%",
+          "MemUsage": "31.29MiB / 3.825GiB",
+          "Name": "transport-cold-7d5a8143ff0f-1-postgres-1",
+          "NetIO": "89.3kB / 71kB",
+          "PIDs": "8"
+        }
+      ],
+      "owned_resources_removed": true
+    },
+    {
+      "attempt": 2,
+      "project": "transport-cold-0a554ab166a8-2",
+      "ports": {
+        "BACKEND_PORT": "53564",
+        "DASHBOARD_PORT": "53565",
+        "NDTP_PORT": "53566",
+        "EMULATOR_PORT": "53567"
+      },
+      "fresh_volume": true,
+      "images_prebuilt": true,
+      "started_at": "2026-09-26T17:43:47.731674+00:00",
+      "passed": true,
+      "http_checks": {
+        "backend_ready": 200,
+        "dashboard": 200,
+        "swagger": 200,
+        "openapi": 200
+      },
+      "all_services_ready_s": 17.375138417002745,
+      "ready_within_limit": true,
+      "services": [
+        {
+          "Command": "\"python -m uvicorn b…\"",
+          "CreatedAt": "2026-09-26 20:43:47 +0300 MSK",
+          "Engine": "",
+          "ExitCode": 0,
+          "Health": "healthy",
+          "ID": "8619f8897fac",
+          "Image": "transport-predictor-python:local",
+          "Labels": "com.docker.compose.depends_on=ml:service_healthy:false,postgres:service_healthy:false,com.docker.compose.oneoff=False,com.docker.compose.service=backend,desktop.docker.io/binds/0/Source=/Users/snaker177/Documents/Projects/hackaton_end2end/dataset,com.docker.compose.project=transport-cold-0a554ab166a8-2,com.docker.compose.project.working_dir=/Users/snaker177/Documents/Projects/hackaton_end2end,com.docker.compose.version=5.5.1,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/0/Target=/app/dataset,desktop.docker.io/ports/9201/tcp=:53566,com.docker.compose.config-hash=6660fb543cc776537c55d1995457382c08399c4d292ccb9914947a38b1279823,com.docker.compose.project.config_files=/Users/snaker177/Documents/Projects/hackaton_end2end/compose.yaml,com.docker.compose.container-number=1,com.docker.compose.image=sha256:7529ce3a3bd2df5521f2b1940a643815b183a478e423d2cb6880afa76cbea913,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/8000/tcp=:53564",
+          "LocalVolumes": "0",
+          "Mounts": "/host_mnt/User…",
+          "Name": "transport-cold-0a554ab166a8-2-backend-1",
+          "Names": "transport-cold-0a554ab166a8-2-backend-1",
+          "Networks": "transport-cold-0a554ab166a8-2_default",
+          "Ports": "0.0.0.0:53564->8000/tcp, [::]:53564->8000/tcp, 0.0.0.0:53566->9201/tcp, [::]:53566->9201/tcp",
+          "Project": "transport-cold-0a554ab166a8-2",
+          "Publishers": [
+            {
+              "URL": "0.0.0.0",
+              "TargetPort": 8000,
+              "PublishedPort": 53564,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "::",
+              "TargetPort": 8000,
+              "PublishedPort": 53564,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "0.0.0.0",
+              "TargetPort": 9201,
+              "PublishedPort": 53566,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "::",
+              "TargetPort": 9201,
+              "PublishedPort": 53566,
+              "Protocol": "tcp"
+            }
+          ],
+          "RunningFor": "18 seconds ago",
+          "Service": "backend",
+          "Size": "0B",
+          "State": "running",
+          "Status": "Up 11 seconds (healthy)"
+        },
+        {
+          "Command": "\"/docker-entrypoint.…\"",
+          "CreatedAt": "2026-09-26 20:43:48 +0300 MSK",
+          "Engine": "",
+          "ExitCode": 0,
+          "Health": "healthy",
+          "ID": "7714f0a0ddf9",
+          "Image": "transport-predictor-frontend:local",
+          "Labels": "com.docker.compose.container-number=1,com.docker.compose.oneoff=False,com.docker.compose.project.working_dir=/Users/snaker177/Documents/Projects/hackaton_end2end,com.docker.compose.service=frontend,com.docker.compose.version=5.5.1,com.docker.compose.depends_on=backend:service_healthy:false,com.docker.compose.image=sha256:a6a1a6971b72297858eeb98d08da09bc7a0b38fe10b0f98e1fd941c0d5a1e202,com.docker.compose.project=transport-cold-0a554ab166a8-2,com.docker.compose.project.config_files=/Users/snaker177/Documents/Projects/hackaton_end2end/compose.yaml,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/80/tcp=:53565,maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>,com.docker.compose.config-hash=339c2a54fb6750856b2fcbf5b24c70a840a4dda40d1c1e9fbc06bcef816b04a5",
+          "LocalVolumes": "0",
+          "Mounts": "",
+          "Name": "transport-cold-0a554ab166a8-2-frontend-1",
+          "Names": "transport-cold-0a554ab166a8-2-frontend-1",
+          "Networks": "transport-cold-0a554ab166a8-2_default",
+          "Ports": "0.0.0.0:53565->80/tcp, [::]:53565->80/tcp",
+          "Project": "transport-cold-0a554ab166a8-2",
+          "Publishers": [
+            {
+              "URL": "0.0.0.0",
+              "TargetPort": 80,
+              "PublishedPort": 53565,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "::",
+              "TargetPort": 80,
+              "PublishedPort": 53565,
+              "Protocol": "tcp"
+            }
+          ],
+          "RunningFor": "17 seconds ago",
+          "Service": "frontend",
+          "Size": "0B",
+          "State": "running",
+          "Status": "Up 5 seconds (healthy)"
+        },
+        {
+          "Command": "\"python -m uvicorn m…\"",
+          "CreatedAt": "2026-09-26 20:43:47 +0300 MSK",
+          "Engine": "",
+          "ExitCode": 0,
+          "Health": "healthy",
+          "ID": "9989393a92b3",
+          "Image": "transport-predictor-python:local",
+          "Labels": "com.docker.compose.service=ml,desktop.docker.io/binds/0/Source=/Users/snaker177/Documents/Projects/hackaton_end2end/artifacts/models,com.docker.compose.oneoff=False,com.docker.compose.project=transport-cold-0a554ab166a8-2,com.docker.compose.version=5.5.1,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/0/Target=/app/artifacts/models,desktop.docker.io/ports.scheme=v2,com.docker.compose.config-hash=9c90bc504c64b5b6d5d1e9d3783dc963071b4d152df7957f31a0037a87682393,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:7529ce3a3bd2df5521f2b1940a643815b183a478e423d2cb6880afa76cbea913,com.docker.compose.project.config_files=/Users/snaker177/Documents/Projects/hackaton_end2end/compose.yaml,com.docker.compose.project.working_dir=/Users/snaker177/Documents/Projects/hackaton_end2end",
+          "LocalVolumes": "0",
+          "Mounts": "/host_mnt/User…",
+          "Name": "transport-cold-0a554ab166a8-2-ml-1",
+          "Names": "transport-cold-0a554ab166a8-2-ml-1",
+          "Networks": "transport-cold-0a554ab166a8-2_default",
+          "Ports": "8000-8001/tcp, 9201/tcp",
+          "Project": "transport-cold-0a554ab166a8-2",
+          "Publishers": [
+            {
+              "URL": "",
+              "TargetPort": 8000,
+              "PublishedPort": 0,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "",
+              "TargetPort": 8001,
+              "PublishedPort": 0,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "",
+              "TargetPort": 9201,
+              "PublishedPort": 0,
+              "Protocol": "tcp"
+            }
+          ],
+          "RunningFor": "18 seconds ago",
+          "Service": "ml",
+          "Size": "0B",
+          "State": "running",
+          "Status": "Up 17 seconds (healthy)"
+        },
+        {
+          "Command": "\"docker-entrypoint.s…\"",
+          "CreatedAt": "2026-09-26 20:43:47 +0300 MSK",
+          "Engine": "",
+          "ExitCode": 0,
+          "Health": "healthy",
+          "ID": "ad610956a426",
+          "Image": "postgres:17-alpine",
+          "Labels": "com.docker.compose.config-hash=7345068c84104c9517b037f98ee77967e37ab80c4c65fdf0c606c0e80c266db4,com.docker.compose.depends_on=,com.docker.compose.image=sha256:0b2882c46a2b8d8e148431b333394348cf4d7f15aec6df7f17d51dc641e56cfa,com.docker.compose.oneoff=False,com.docker.compose.project=transport-cold-0a554ab166a8-2,com.docker.compose.project.working_dir=/Users/snaker177/Documents/Projects/hackaton_end2end,desktop.docker.io/ports.scheme=v2,com.docker.compose.container-number=1,com.docker.compose.project.config_files=/Users/snaker177/Documents/Projects/hackaton_end2end/compose.yaml,com.docker.compose.service=postgres,com.docker.compose.version=5.5.1",
+          "LocalVolumes": "1",
+          "Mounts": "transport-cold…",
+          "Name": "transport-cold-0a554ab166a8-2-postgres-1",
+          "Names": "transport-cold-0a554ab166a8-2-postgres-1",
+          "Networks": "transport-cold-0a554ab166a8-2_default",
+          "Ports": "5432/tcp",
+          "Project": "transport-cold-0a554ab166a8-2",
+          "Publishers": [
+            {
+              "URL": "",
+              "TargetPort": 5432,
+              "PublishedPort": 0,
+              "Protocol": "tcp"
+            }
+          ],
+          "RunningFor": "18 seconds ago",
+          "Service": "postgres",
+          "Size": "0B",
+          "State": "running",
+          "Status": "Up 17 seconds (healthy)"
+        }
+      ],
+      "pipeline": {
+        "passed": true,
+        "run_id": "e27a54b7-9eb5-4868-ba23-ec382382421c",
+        "scenario_id": "load-20260926T174405424997:0deb87fb8d32862dd8bb",
+        "model_profile": "stream",
+        "model_version": "stream-9a3614b81bad",
+        "prediction_id": "e27a54b7-9eb5-4868-ba23-ec382382421c:load-000_1790444646.063464",
+        "publication_horizon_s": 629.252996,
+        "first_model_prediction_s": 0.5144980840123026,
+        "first_prediction_ui_s": 0.6695831670076586,
+        "rendered_event_id": 2,
+        "tcp_packets_sent": 1,
+        "sender_connections": 1,
+        "sender_failures": 0,
+        "snapshot_polls": 3,
+        "browser_errors": [],
+        "system": {
+          "backend_status": "ok",
+          "ml_status": "ready",
+          "model_version": "stream-9a3614b81bad",
+          "active_vehicles": 1,
+          "stale_vehicles": 0,
+          "queue_depth": 0,
+          "ingress_queue_depth": 0,
+          "durable_queue_depth": 0,
+          "apply_queue_depth": 0,
+          "apply_lag_s": 0,
+          "ml_queue_depth": 0,
+          "ml_inflight": 0,
+          "ingress_queue_capacity": 5000,
+          "processing_latency_p95_ms": 111.43,
+          "ingress_latency_p95_ms": 105.634167000062,
+          "prediction_stages_ms": {
+            "scheduler_wait_ms": 1.674,
+            "snapshot_ms": 0.047,
+            "feature_build_ms": 1.327,
+            "feature_wait_ms": 0.134,
+            "inference_ms": 101.813,
+            "candidate_commit_ms": 3.355,
+            "publication_ms": 0.304,
+            "final_commit_ms": 4.36,
+            "total_ms": 111.43
+          },
+          "prediction_stages_cutoff_at": "2026-09-26T17:44:06.063464+00:00",
+          "opportunity_count": 0,
+          "covered_opportunities": 0,
+          "model_covered_opportunities": 0,
+          "eligible_opportunity_count": 1,
+          "immature_opportunity_count": 1,
+          "opportunity_coverage": null,
+          "model_opportunity_coverage": null,
+          "telemetry_per_second": 1.15,
+          "last_error": null,
+          "ndtp_errors": 0,
+          "ndtp": {
+            "connections": 1,
+            "active_connections": 1,
+            "handshakes": 1,
+            "frames": 2,
+            "events": 1
+          },
+          "telemetry_count": 1,
+          "duplicates": 0,
+          "late_events": 0,
+          "unknown_devices": 0,
+          "ml_failures": 0,
+          "predictions_count": 1,
+          "processing_latency_ms": 111.43,
+          "invalid_events": 0,
+          "ignored_live_events": 0,
+          "dropped_live_events": 0,
+          "ingress_admitted": 1,
+          "ingress_committed": 1,
+          "ingress_rejected": 0,
+          "backpressure_waits": 0,
+          "suppressed_horizon": 0,
+          "suppressed_observed": 0,
+          "suppressed_stale": 0,
+          "suppressed_superseded": 0,
+          "prediction_jobs_replaced": 0,
+          "published_predictions": 1,
+          "retrospective_predictions": 0,
+          "late_alerts": 0,
+          "max_ingress_queue_depth": 1,
+          "max_ml_batch_size": 1
+        },
+        "checks": [
+          "import current-date plan",
+          "real binary NDTP TCP",
+          "stream model result",
+          "publication horizon",
+          "SSE delivery",
+          "React rendered same prediction",
+          "vehicle detail model version"
+        ]
+      },
+      "first_prediction_ui_total_s": 18.7484524169995,
+      "first_prediction_ui_within_limit": true,
+      "within_limit": true,
+      "images": [
+        {
+          "ID": "sha256:6734be14d777d0b92ea4bcaea24bbbef43983c19a3345ef96f5d3414ab40d2d4",
+          "ContainerName": "transport-cold-0a554ab166a8-2-frontend-1",
+          "Repository": "transport-predictor-frontend",
+          "Tag": "local",
+          "Platform": "linux/arm64",
+          "Size": 76534614,
+          "Created": "2026-09-26T16:42:27.759538429Z",
+          "LastTagTime": "2026-09-26T16:48:51.864477634Z"
+        },
+        {
+          "ID": "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c",
+          "ContainerName": "transport-cold-0a554ab166a8-2-backend-1",
+          "Repository": "transport-predictor-python",
+          "Tag": "local",
+          "Platform": "linux/arm64",
+          "Size": 1408972679,
+          "Created": "2026-09-26T17:36:55.150873501Z",
+          "LastTagTime": "2026-09-26T17:36:55.203593959Z"
+        },
+        {
+          "ID": "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c",
+          "ContainerName": "transport-cold-0a554ab166a8-2-ml-1",
+          "Repository": "transport-predictor-python",
+          "Tag": "local",
+          "Platform": "linux/arm64",
+          "Size": 1408972679,
+          "Created": "2026-09-26T17:36:55.150873501Z",
+          "LastTagTime": "2026-09-26T17:36:55.203593959Z"
+        },
+        {
+          "ID": "sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+          "ContainerName": "transport-cold-0a554ab166a8-2-postgres-1",
+          "Repository": "postgres",
+          "Tag": "17-alpine",
+          "Platform": "linux/arm64/v8",
+          "Size": 414818382,
+          "Created": "2026-09-17T21:31:46.755310538Z",
+          "LastTagTime": "2026-09-26T15:01:00.972673133Z"
+        }
+      ],
+      "memory_snapshot": [
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "6.03%",
+          "Container": "8619f8897fac3699abc0e6d6c16e6a49bfea5384a40bba6f64cce049e7a0ec7c",
+          "ID": "8619f8897fac",
+          "MemPerc": "2.58%",
+          "MemUsage": "100.8MiB / 3.825GiB",
+          "Name": "transport-cold-0a554ab166a8-2-backend-1",
+          "NetIO": "94.7kB / 173kB",
+          "PIDs": "8"
+        },
+        {
+          "BlockIO": "0B / 4.1kB",
+          "CPUPerc": "0.00%",
+          "Container": "7714f0a0ddf99ff232b21f4b422d84fd0909f038afb958c13491ee331a8d02ef",
+          "ID": "7714f0a0ddf9",
+          "MemPerc": "0.20%",
+          "MemUsage": "7.688MiB / 3.825GiB",
+          "Name": "transport-cold-0a554ab166a8-2-frontend-1",
+          "NetIO": "53.7kB / 492kB",
+          "PIDs": "9"
+        },
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "0.16%",
+          "Container": "9989393a92b3472efeda9c4e1dd383b3e5b982f5e101fb1afd0cadac15ac6ee3",
+          "ID": "9989393a92b3",
+          "MemPerc": "2.84%",
+          "MemUsage": "111.2MiB / 3.825GiB",
+          "Name": "transport-cold-0a554ab166a8-2-ml-1",
+          "NetIO": "4.59kB / 1.29kB",
+          "PIDs": "14"
+        },
+        {
+          "BlockIO": "0B / 52.8MB",
+          "CPUPerc": "4.92%",
+          "Container": "ad610956a4264c83da475c8167e2bc708b8ff955ab6757c992c4ce3f8a14e976",
+          "ID": "ad610956a426",
+          "MemPerc": "0.78%",
+          "MemUsage": "30.74MiB / 3.825GiB",
+          "Name": "transport-cold-0a554ab166a8-2-postgres-1",
+          "NetIO": "106kB / 79.1kB",
+          "PIDs": "8"
+        }
+      ],
+      "owned_resources_removed": true
+    },
+    {
+      "attempt": 3,
+      "project": "transport-cold-77c0d08e9402-3",
+      "ports": {
+        "BACKEND_PORT": "53603",
+        "DASHBOARD_PORT": "53604",
+        "NDTP_PORT": "53605",
+        "EMULATOR_PORT": "53606"
+      },
+      "fresh_volume": true,
+      "images_prebuilt": true,
+      "started_at": "2026-09-26T17:44:10.175264+00:00",
+      "passed": true,
+      "http_checks": {
+        "backend_ready": 200,
+        "dashboard": 200,
+        "swagger": 200,
+        "openapi": 200
+      },
+      "all_services_ready_s": 17.396566499999608,
+      "ready_within_limit": true,
+      "services": [
+        {
+          "Command": "\"python -m uvicorn b…\"",
+          "CreatedAt": "2026-09-26 20:44:10 +0300 MSK",
+          "Engine": "",
+          "ExitCode": 0,
+          "Health": "healthy",
+          "ID": "a9e015c9c4a0",
+          "Image": "transport-predictor-python:local",
+          "Labels": "com.docker.compose.config-hash=42f9c0decde2593b825b322e8e403d54e59d56047f9df223185d2025720def2f,com.docker.compose.container-number=1,com.docker.compose.image=sha256:7529ce3a3bd2df5521f2b1940a643815b183a478e423d2cb6880afa76cbea913,com.docker.compose.oneoff=False,com.docker.compose.service=backend,desktop.docker.io/binds/0/SourceKind=hostFile,com.docker.compose.depends_on=postgres:service_healthy:false,ml:service_healthy:false,com.docker.compose.project=transport-cold-77c0d08e9402-3,com.docker.compose.version=5.5.1,com.docker.compose.project.config_files=/Users/snaker177/Documents/Projects/hackaton_end2end/compose.yaml,com.docker.compose.project.working_dir=/Users/snaker177/Documents/Projects/hackaton_end2end,desktop.docker.io/binds/0/Source=/Users/snaker177/Documents/Projects/hackaton_end2end/dataset,desktop.docker.io/binds/0/Target=/app/dataset,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/8000/tcp=:53603,desktop.docker.io/ports/9201/tcp=:53605",
+          "LocalVolumes": "0",
+          "Mounts": "/host_mnt/User…",
+          "Name": "transport-cold-77c0d08e9402-3-backend-1",
+          "Names": "transport-cold-77c0d08e9402-3-backend-1",
+          "Networks": "transport-cold-77c0d08e9402-3_default",
+          "Ports": "0.0.0.0:53603->8000/tcp, [::]:53603->8000/tcp, 0.0.0.0:53605->9201/tcp, [::]:53605->9201/tcp",
+          "Project": "transport-cold-77c0d08e9402-3",
+          "Publishers": [
+            {
+              "URL": "0.0.0.0",
+              "TargetPort": 8000,
+              "PublishedPort": 53603,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "::",
+              "TargetPort": 8000,
+              "PublishedPort": 53603,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "0.0.0.0",
+              "TargetPort": 9201,
+              "PublishedPort": 53605,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "::",
+              "TargetPort": 9201,
+              "PublishedPort": 53605,
+              "Protocol": "tcp"
+            }
+          ],
+          "RunningFor": "17 seconds ago",
+          "Service": "backend",
+          "Size": "0B",
+          "State": "running",
+          "Status": "Up 11 seconds (healthy)"
+        },
+        {
+          "Command": "\"/docker-entrypoint.…\"",
+          "CreatedAt": "2026-09-26 20:44:10 +0300 MSK",
+          "Engine": "",
+          "ExitCode": 0,
+          "Health": "healthy",
+          "ID": "bd8241c1f967",
+          "Image": "transport-predictor-frontend:local",
+          "Labels": "com.docker.compose.project.config_files=/Users/snaker177/Documents/Projects/hackaton_end2end/compose.yaml,com.docker.compose.service=frontend,desktop.docker.io/ports/80/tcp=:53604,com.docker.compose.container-number=1,com.docker.compose.depends_on=backend:service_healthy:false,com.docker.compose.oneoff=False,com.docker.compose.project.working_dir=/Users/snaker177/Documents/Projects/hackaton_end2end,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2,maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>,com.docker.compose.config-hash=fbcc6e3478bfb17d354f372162770171234c1f299f8971cbe80c3b9540e3b832,com.docker.compose.image=sha256:a6a1a6971b72297858eeb98d08da09bc7a0b38fe10b0f98e1fd941c0d5a1e202,com.docker.compose.project=transport-cold-77c0d08e9402-3",
+          "LocalVolumes": "0",
+          "Mounts": "",
+          "Name": "transport-cold-77c0d08e9402-3-frontend-1",
+          "Names": "transport-cold-77c0d08e9402-3-frontend-1",
+          "Networks": "transport-cold-77c0d08e9402-3_default",
+          "Ports": "0.0.0.0:53604->80/tcp, [::]:53604->80/tcp",
+          "Project": "transport-cold-77c0d08e9402-3",
+          "Publishers": [
+            {
+              "URL": "0.0.0.0",
+              "TargetPort": 80,
+              "PublishedPort": 53604,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "::",
+              "TargetPort": 80,
+              "PublishedPort": 53604,
+              "Protocol": "tcp"
+            }
+          ],
+          "RunningFor": "17 seconds ago",
+          "Service": "frontend",
+          "Size": "0B",
+          "State": "running",
+          "Status": "Up 5 seconds (healthy)"
+        },
+        {
+          "Command": "\"python -m uvicorn m…\"",
+          "CreatedAt": "2026-09-26 20:44:10 +0300 MSK",
+          "Engine": "",
+          "ExitCode": 0,
+          "Health": "healthy",
+          "ID": "d8201789afff",
+          "Image": "transport-predictor-python:local",
+          "Labels": "com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.project.working_dir=/Users/snaker177/Documents/Projects/hackaton_end2end,com.docker.compose.service=ml,com.docker.compose.version=5.5.1,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/0/Target=/app/artifacts/models,com.docker.compose.config-hash=9c90bc504c64b5b6d5d1e9d3783dc963071b4d152df7957f31a0037a87682393,com.docker.compose.image=sha256:7529ce3a3bd2df5521f2b1940a643815b183a478e423d2cb6880afa76cbea913,com.docker.compose.oneoff=False,com.docker.compose.project=transport-cold-77c0d08e9402-3,com.docker.compose.project.config_files=/Users/snaker177/Documents/Projects/hackaton_end2end/compose.yaml,desktop.docker.io/binds/0/Source=/Users/snaker177/Documents/Projects/hackaton_end2end/artifacts/models,desktop.docker.io/ports.scheme=v2",
+          "LocalVolumes": "0",
+          "Mounts": "/host_mnt/User…",
+          "Name": "transport-cold-77c0d08e9402-3-ml-1",
+          "Names": "transport-cold-77c0d08e9402-3-ml-1",
+          "Networks": "transport-cold-77c0d08e9402-3_default",
+          "Ports": "8000-8001/tcp, 9201/tcp",
+          "Project": "transport-cold-77c0d08e9402-3",
+          "Publishers": [
+            {
+              "URL": "",
+              "TargetPort": 8000,
+              "PublishedPort": 0,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "",
+              "TargetPort": 8001,
+              "PublishedPort": 0,
+              "Protocol": "tcp"
+            },
+            {
+              "URL": "",
+              "TargetPort": 9201,
+              "PublishedPort": 0,
+              "Protocol": "tcp"
+            }
+          ],
+          "RunningFor": "17 seconds ago",
+          "Service": "ml",
+          "Size": "0B",
+          "State": "running",
+          "Status": "Up 17 seconds (healthy)"
+        },
+        {
+          "Command": "\"docker-entrypoint.s…\"",
+          "CreatedAt": "2026-09-26 20:44:10 +0300 MSK",
+          "Engine": "",
+          "ExitCode": 0,
+          "Health": "healthy",
+          "ID": "792d7f00ce70",
+          "Image": "postgres:17-alpine",
+          "Labels": "com.docker.compose.version=5.5.1,com.docker.compose.config-hash=7345068c84104c9517b037f98ee77967e37ab80c4c65fdf0c606c0e80c266db4,com.docker.compose.image=sha256:0b2882c46a2b8d8e148431b333394348cf4d7f15aec6df7f17d51dc641e56cfa,com.docker.compose.project.config_files=/Users/snaker177/Documents/Projects/hackaton_end2end/compose.yaml,com.docker.compose.project.working_dir=/Users/snaker177/Documents/Projects/hackaton_end2end,com.docker.compose.service=postgres,desktop.docker.io/ports.scheme=v2,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.oneoff=False,com.docker.compose.project=transport-cold-77c0d08e9402-3",
+          "LocalVolumes": "1",
+          "Mounts": "transport-cold…",
+          "Name": "transport-cold-77c0d08e9402-3-postgres-1",
+          "Names": "transport-cold-77c0d08e9402-3-postgres-1",
+          "Networks": "transport-cold-77c0d08e9402-3_default",
+          "Ports": "5432/tcp",
+          "Project": "transport-cold-77c0d08e9402-3",
+          "Publishers": [
+            {
+              "URL": "",
+              "TargetPort": 5432,
+              "PublishedPort": 0,
+              "Protocol": "tcp"
+            }
+          ],
+          "RunningFor": "17 seconds ago",
+          "Service": "postgres",
+          "Size": "0B",
+          "State": "running",
+          "Status": "Up 17 seconds (healthy)"
+        }
+      ],
+      "pipeline": {
+        "passed": true,
+        "run_id": "52727970-042d-45a1-b912-e1e447b4ad13",
+        "scenario_id": "load-20260926T174427932077:2ecd6816d98ecaaa2407",
+        "model_profile": "stream",
+        "model_version": "stream-9a3614b81bad",
+        "prediction_id": "52727970-042d-45a1-b912-e1e447b4ad13:load-000_1790444668.492329",
+        "publication_horizon_s": 629.331941,
+        "first_model_prediction_s": 0.5129869159864029,
+        "first_prediction_ui_s": 0.6568500409921398,
+        "rendered_event_id": 2,
+        "tcp_packets_sent": 1,
+        "sender_connections": 1,
+        "sender_failures": 0,
+        "snapshot_polls": 3,
+        "browser_errors": [],
+        "system": {
+          "backend_status": "ok",
+          "ml_status": "ready",
+          "model_version": "stream-9a3614b81bad",
+          "active_vehicles": 1,
+          "stale_vehicles": 0,
+          "queue_depth": 0,
+          "ingress_queue_depth": 0,
+          "durable_queue_depth": 0,
+          "apply_queue_depth": 0,
+          "apply_lag_s": 0,
+          "ml_queue_depth": 0,
+          "ml_inflight": 0,
+          "ingress_queue_capacity": 5000,
+          "processing_latency_p95_ms": 111.38,
+          "ingress_latency_p95_ms": 106.35045800063381,
+          "prediction_stages_ms": {
+            "scheduler_wait_ms": 1.576,
+            "snapshot_ms": 0.076,
+            "feature_build_ms": 1.524,
+            "feature_wait_ms": 0.21,
+            "inference_ms": 100.233,
+            "candidate_commit_ms": 4.019,
+            "publication_ms": 0.3,
+            "final_commit_ms": 4.94,
+            "total_ms": 111.38
+          },
+          "prediction_stages_cutoff_at": "2026-09-26T17:44:28.492329+00:00",
+          "opportunity_count": 0,
+          "covered_opportunities": 0,
+          "model_covered_opportunities": 0,
+          "eligible_opportunity_count": 1,
+          "immature_opportunity_count": 1,
+          "opportunity_coverage": null,
+          "model_opportunity_coverage": null,
+          "telemetry_per_second": 1.18,
+          "last_error": null,
+          "ndtp_errors": 0,
+          "ndtp": {
+            "connections": 1,
+            "active_connections": 1,
+            "handshakes": 1,
+            "frames": 2,
+            "events": 1
+          },
+          "telemetry_count": 1,
+          "duplicates": 0,
+          "late_events": 0,
+          "unknown_devices": 0,
+          "ml_failures": 0,
+          "predictions_count": 1,
+          "processing_latency_ms": 111.38,
+          "invalid_events": 0,
+          "ignored_live_events": 0,
+          "dropped_live_events": 0,
+          "ingress_admitted": 1,
+          "ingress_committed": 1,
+          "ingress_rejected": 0,
+          "backpressure_waits": 0,
+          "suppressed_horizon": 0,
+          "suppressed_observed": 0,
+          "suppressed_stale": 0,
+          "suppressed_superseded": 0,
+          "prediction_jobs_replaced": 0,
+          "published_predictions": 1,
+          "retrospective_predictions": 0,
+          "late_alerts": 0,
+          "max_ingress_queue_depth": 1,
+          "max_ml_batch_size": 1
+        },
+        "checks": [
+          "import current-date plan",
+          "real binary NDTP TCP",
+          "stream model result",
+          "publication horizon",
+          "SSE delivery",
+          "React rendered same prediction",
+          "vehicle detail model version"
+        ]
+      },
+      "first_prediction_ui_total_s": 18.768370749996393,
+      "first_prediction_ui_within_limit": true,
+      "within_limit": true,
+      "images": [
+        {
+          "ID": "sha256:6734be14d777d0b92ea4bcaea24bbbef43983c19a3345ef96f5d3414ab40d2d4",
+          "ContainerName": "transport-cold-77c0d08e9402-3-frontend-1",
+          "Repository": "transport-predictor-frontend",
+          "Tag": "local",
+          "Platform": "linux/arm64",
+          "Size": 76534614,
+          "Created": "2026-09-26T16:42:27.759538429Z",
+          "LastTagTime": "2026-09-26T16:48:51.864477634Z"
+        },
+        {
+          "ID": "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c",
+          "ContainerName": "transport-cold-77c0d08e9402-3-ml-1",
+          "Repository": "transport-predictor-python",
+          "Tag": "local",
+          "Platform": "linux/arm64",
+          "Size": 1408972679,
+          "Created": "2026-09-26T17:36:55.150873501Z",
+          "LastTagTime": "2026-09-26T17:36:55.203593959Z"
+        },
+        {
+          "ID": "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c",
+          "ContainerName": "transport-cold-77c0d08e9402-3-backend-1",
+          "Repository": "transport-predictor-python",
+          "Tag": "local",
+          "Platform": "linux/arm64",
+          "Size": 1408972679,
+          "Created": "2026-09-26T17:36:55.150873501Z",
+          "LastTagTime": "2026-09-26T17:36:55.203593959Z"
+        },
+        {
+          "ID": "sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+          "ContainerName": "transport-cold-77c0d08e9402-3-postgres-1",
+          "Repository": "postgres",
+          "Tag": "17-alpine",
+          "Platform": "linux/arm64/v8",
+          "Size": 414818382,
+          "Created": "2026-09-17T21:31:46.755310538Z",
+          "LastTagTime": "2026-09-26T15:01:00.972673133Z"
+        }
+      ],
+      "memory_snapshot": [
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "5.72%",
+          "Container": "a9e015c9c4a0a2e3a7db610dbf3c7b3df01da8461d64d53c05a6c6ee47e1cf0a",
+          "ID": "a9e015c9c4a0",
+          "MemPerc": "2.56%",
+          "MemUsage": "100.3MiB / 3.825GiB",
+          "Name": "transport-cold-77c0d08e9402-3-backend-1",
+          "NetIO": "95.5kB / 175kB",
+          "PIDs": "8"
+        },
+        {
+          "BlockIO": "0B / 4.1kB",
+          "CPUPerc": "0.00%",
+          "Container": "bd8241c1f967c523109d6946c1dd84533f93131267abaee1d42d5b44ba4520d0",
+          "ID": "bd8241c1f967",
+          "MemPerc": "0.19%",
+          "MemUsage": "7.336MiB / 3.825GiB",
+          "Name": "transport-cold-77c0d08e9402-3-frontend-1",
+          "NetIO": "53.1kB / 491kB",
+          "PIDs": "9"
+        },
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "0.15%",
+          "Container": "d8201789afffa419dc85226a3a7fbd440deef905788d4de16f2cfa41e3db244b",
+          "ID": "d8201789afff",
+          "MemPerc": "2.85%",
+          "MemUsage": "111.8MiB / 3.825GiB",
+          "Name": "transport-cold-77c0d08e9402-3-ml-1",
+          "NetIO": "4.59kB / 1.29kB",
+          "PIDs": "14"
+        },
+        {
+          "BlockIO": "0B / 52.8MB",
+          "CPUPerc": "1.63%",
+          "Container": "792d7f00ce702fe25b9d51e1fcfd56c6cd3247da7d58bfa61de594a1adb7e82a",
+          "ID": "792d7f00ce70",
+          "MemPerc": "0.77%",
+          "MemUsage": "30.29MiB / 3.825GiB",
+          "Name": "transport-cold-77c0d08e9402-3-postgres-1",
+          "NetIO": "89.9kB / 71kB",
+          "PIDs": "8"
+        }
+      ],
+      "owned_resources_removed": true
+    }
+  ],
+  "protocol": "Prebuilt local images, new PostgreSQL volume for every isolated project; no existing stack changes.",
+  "limitations": [
+    "Image build/download time is excluded and must be reported separately.",
+    "Three timings yield median/max, not a meaningful p95 estimate.",
+    "Memory entries are point samples, not peak usage."
+  ],
+  "passed": true,
+  "successful_runs": 3,
+  "three_runs_confirmed": true,
+  "ready_median_s": 17.396566499999608,
+  "ready_max_s": 17.55876500000886,
+  "first_prediction_ui_median_s": 18.768370749996393,
+  "first_prediction_ui_max_s": 19.21957954199752
+}

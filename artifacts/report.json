@@ -1,0 +1,307 @@
+{
+  "model_version": "delay-0a9a35c0aa9f",
+  "created_at": "2026-09-26T15:00:32.963659+00:00",
+  "selection": {
+    "selected": {
+      "cohort": "real",
+      "mode": "residual",
+      "oof_mae_s": 77.90547666211343,
+      "fold_mae_s": [
+        73.43100476006346,
+        70.35007872424916,
+        88.93979637130465
+      ],
+      "eligible_for_selection": true
+    },
+    "experiments": [
+      {
+        "cohort": "real",
+        "mode": "zero",
+        "oof_mae_s": 97.35612082670906,
+        "fold_mae_s": [
+          88.6256157635468,
+          80.38235294117646,
+          120.93693693693693
+        ],
+        "eligible_for_selection": true
+      },
+      {
+        "cohort": "real",
+        "mode": "cur_dev",
+        "oof_mae_s": 89.49443561208267,
+        "fold_mae_s": [
+          87.60098522167488,
+          80.83333333333333,
+          99.18468468468468
+        ],
+        "eligible_for_selection": true
+      },
+      {
+        "cohort": "real",
+        "mode": "direct",
+        "oof_mae_s": 79.03714736519764,
+        "fold_mae_s": [
+          75.44917574437217,
+          72.599145013768,
+          88.2340424945635
+        ],
+        "eligible_for_selection": true
+      },
+      {
+        "cohort": "real",
+        "mode": "residual",
+        "oof_mae_s": 77.90547666211343,
+        "fold_mae_s": [
+          73.43100476006346,
+          70.35007872424916,
+          88.93979637130465
+        ],
+        "eligible_for_selection": true
+      },
+      {
+        "cohort": "augmented",
+        "mode": "direct",
+        "oof_mae_s": 75.69331359129927,
+        "fold_mae_s": [
+          73.05601260959538,
+          67.47422585069485,
+          85.65757484521457
+        ],
+        "eligible_for_selection": false,
+        "limitation": "Synthetic lineage is not supplied; augmentation is diagnostic only and is excluded from production selection."
+      },
+      {
+        "cohort": "augmented",
+        "mode": "residual",
+        "oof_mae_s": 75.81197676854956,
+        "fold_mae_s": [
+          68.92413681053428,
+          67.07486550856207,
+          90.13901374384031
+        ],
+        "eligible_for_selection": false,
+        "limitation": "Synthetic lineage is not supplied; augmentation is diagnostic only and is excluded from production selection."
+      }
+    ],
+    "folds": [
+      {
+        "validation_start": "2026-01-06T11:20:00+00:00",
+        "validation_end": "2026-01-06T14:30:00+00:00",
+        "training_cutoff": "2026-01-06T10:50:00+00:00",
+        "real_training_rows": 475,
+        "augmented_training_rows": 1787,
+        "validation_rows": 203,
+        "target_visits_disjoint": true,
+        "purge_s": 1800
+      },
+      {
+        "validation_start": "2026-01-06T14:30:00+00:00",
+        "validation_end": "2026-01-06T17:35:00+00:00",
+        "training_cutoff": "2026-01-06T14:00:00+00:00",
+        "real_training_rows": 675,
+        "augmented_training_rows": 2604,
+        "validation_rows": 204,
+        "target_visits_disjoint": true,
+        "purge_s": 1800
+      },
+      {
+        "validation_start": "2026-01-06T17:35:00+00:00",
+        "validation_end": "2026-01-06T23:55:01+00:00",
+        "training_cutoff": "2026-01-06T17:05:00+00:00",
+        "real_training_rows": 873,
+        "augmented_training_rows": 3358,
+        "validation_rows": 222,
+        "target_visits_disjoint": true,
+        "purge_s": 1800
+      }
+    ],
+    "test_used_for_selection": false,
+    "synthetic_lineage_verified": false
+  },
+  "test": {
+    "rows": 353,
+    "mae_s": 70.61199527861244,
+    "zero_baseline_mae_s": 103.33711048158641,
+    "cur_dev_baseline_mae_s": 93.35977337110482,
+    "improves_cur_dev_baseline": true,
+    "brier_score": 0.12740961902071932,
+    "prevalence_baseline_brier": 0.18538024583662283,
+    "calibration_bins": [
+      {
+        "lower": 0.0,
+        "upper": 0.1,
+        "rows": 94,
+        "mean_probability": 0.050835106646028395,
+        "observed_late_rate": 0.010638297872340425
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "rows": 77,
+        "mean_probability": 0.14795221289464325,
+        "observed_late_rate": 0.11688311688311688
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.3,
+        "rows": 43,
+        "mean_probability": 0.24817804334603863,
+        "observed_late_rate": 0.13953488372093023
+      },
+      {
+        "lower": 0.3,
+        "upper": 0.4,
+        "rows": 27,
+        "mean_probability": 0.3510256630921155,
+        "observed_late_rate": 0.3333333333333333
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "rows": 29,
+        "mean_probability": 0.45220693493237635,
+        "observed_late_rate": 0.3448275862068966
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6,
+        "rows": 20,
+        "mean_probability": 0.5557490384735064,
+        "observed_late_rate": 0.35
+      },
+      {
+        "lower": 0.6,
+        "upper": 0.7,
+        "rows": 29,
+        "mean_probability": 0.6486878980083652,
+        "observed_late_rate": 0.5517241379310345
+      },
+      {
+        "lower": 0.7,
+        "upper": 0.8,
+        "rows": 12,
+        "mean_probability": 0.7499548020937818,
+        "observed_late_rate": 0.5833333333333334
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "rows": 14,
+        "mean_probability": 0.8457405544629772,
+        "observed_late_rate": 0.9285714285714286
+      },
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "rows": 8,
+        "mean_probability": 0.916137506111804,
+        "observed_late_rate": 1.0
+      }
+    ],
+    "groups": {
+      "vehicle": {
+        "129964": {
+          "rows": 26,
+          "mae_s": 61.21926365825819
+        },
+        "131672": {
+          "rows": 38,
+          "mae_s": 67.26085665469517
+        },
+        "134040": {
+          "rows": 52,
+          "mae_s": 67.33680742747794
+        },
+        "132430": {
+          "rows": 32,
+          "mae_s": 107.7974726620356
+        },
+        "130238": {
+          "rows": 7,
+          "mae_s": 24.08139874968872
+        },
+        "122048": {
+          "rows": 24,
+          "mae_s": 118.76026455584072
+        },
+        "133300": {
+          "rows": 28,
+          "mae_s": 51.28046877996991
+        },
+        "135081": {
+          "rows": 55,
+          "mae_s": 70.23274875674302
+        },
+        "133957": {
+          "rows": 41,
+          "mae_s": 69.135763692501
+        },
+        "122613": {
+          "rows": 25,
+          "mae_s": 39.117183884745785
+        },
+        "122658": {
+          "rows": 17,
+          "mae_s": 98.44727358947279
+        },
+        "130072": {
+          "rows": 2,
+          "mae_s": 9.862744937933652
+        },
+        "134494": {
+          "rows": 6,
+          "mae_s": 0.6820527478263676
+        }
+      },
+      "class": {
+        "ontime": {
+          "rows": 218,
+          "mae_s": 43.32958647341012
+        },
+        "early": {
+          "rows": 49,
+          "mae_s": 99.43220483698065
+        },
+        "late": {
+          "rows": 86,
+          "mae_s": 123.34891215272948
+        }
+      },
+      "cur_dev": {
+        "present": {
+          "rows": 353,
+          "mae_s": 70.61199527861244
+        }
+      },
+      "telemetry": {
+        "good": {
+          "rows": 315,
+          "mae_s": 74.13795135548278
+        },
+        "poor": {
+          "rows": 38,
+          "mae_s": 41.38367516771355
+        }
+      }
+    },
+    "batch_inference_s": 0.002913042000727728
+  },
+  "data_audit": {
+    "train_traffic_rows": 287849,
+    "test_traffic_rows": 105945,
+    "train_points": 4434,
+    "real_train_points": 1141,
+    "test_validate_traffic_identical": true,
+    "train_test_target_overlap": 0,
+    "validate_schedule_facts_read": false
+  },
+  "limitations": [
+    "Test and validate contain identical telemetry and are not independent periods.",
+    "Real train/test labels cover the same calendar period; the test measures held-out visits, not unseen-day generalization.",
+    "Synthetic lineage is unknown; augmented experiments are diagnostic and synthetic data is excluded from the released model.",
+    "Online cur_dev_s is estimated; official metrics use provided cur_dev_s and do not establish online accuracy.",
+    "Probability calibration is based on temporal out-of-fold training predictions; distribution shift can impair calibration.",
+    "MAE_TARGET was not provided, so an official score is not calculated."
+  ],
+  "elapsed_s": 28.568425624995143
+}

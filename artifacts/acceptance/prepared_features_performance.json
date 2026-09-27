@@ -1,0 +1,70 @@
+{
+  "created_at": "2026-09-26T17:16:02.685175+00:00",
+  "scope": "One bounded native reproduction of real load input, not an end-to-end SLO certification. Computation timing excludes input JSON load, one-time plan/prepared sidecar creation, HTTP, database and UI. New full pipeline must be checked in Docker.",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "input_sha256": "ec3966a89e77a6f9a0af3795aa7fc1013b3d61c56dfa933f108f87117ee6188f",
+  "input_rows": 89900,
+  "points": 100,
+  "cutoff": "2026-09-26T17:08:17.070423+00:00",
+  "baseline_feature_sha256": "81ebfa80250f9920c82233bdf8d5eb8f0268b7c3d70c90a3730efa6c98f51fd1",
+  "optimized_feature_sha256": "2d55d92fbd909904ec2059a0927323089acfecbbbd22d97907fa5302fd636815",
+  "before_native_ms": {
+    "capture_ms": 408.6343329981901,
+    "dedup_group_ms": 123.85820900090039,
+    "builder_index_ms": 438.83912499586586,
+    "features_ms": 62.21620799624361,
+    "model_explain_ms": 172.46891700779088,
+    "request_json_ms": 1.694874998065643
+  },
+  "after_native_ms": {
+    "capture_ms": 2.210582999396138,
+    "causal_index_ms": 39.298917006817646,
+    "features_ms": 30.129500009934418,
+    "model_explain_ms": 130.00791599915829
+  },
+  "before_total_ms": 1207.7116669970565,
+  "after_total_ms": 201.6469160153065,
+  "once_at_ingest_preparation_ms": 737.6569999905769,
+  "exact_feature_dictionaries_equal": true,
+  "model_equivalence": {
+    "official": {
+      "exact_predictions_probability_factors_equal": true,
+      "model_version": "delay-0a9a35c0aa9f",
+      "model_files_sha256": {
+        "classifier.cbm": "c1f1056f5b23d5e8813d7f5c6792f06e2960393d10e3776c84c5b4d0d1732ad8",
+        "manifest.json": "30017600203cae8af8c957eb1757a9fed3f31e66bae6e2c8bc424548f2048747",
+        "regressor.cbm": "2472a0beb00144299cfc37e20763aba6a32adf37fb7e01d2b60be6e98a78542d"
+      }
+    },
+    "stream": {
+      "exact_predictions_probability_factors_equal": true,
+      "model_version": "stream-9a3614b81bad",
+      "model_files_sha256": {
+        "classifier.cbm": "8fe82ce657d3527ae46e9987ae0a3234adba07db4fe085e2e462a37bb00007db",
+        "manifest.json": "93fea2910136f4f8d64df195c22dc4523c2e68e313a288105b08d78ac7582f2c",
+        "regressor.cbm": "7ffb9e91ebbb2ee6acea637a2517a3747997458ccee11f33b5703e90b0e77a4f"
+      }
+    }
+  },
+  "running_baseline_observed_timestamps": {
+    "triggered_at_to_generated_at_ms": {
+      "n": 100,
+      "min": 1859.4409999999998,
+      "median": 1863.19,
+      "max": 1868.231
+    },
+    "generated_at_to_published_at_ms": {
+      "n": 100,
+      "min": 71.05300000000001,
+      "median": 76.3335,
+      "max": 88.218
+    },
+    "triggered_at_to_published_at_ms": {
+      "n": 100,
+      "min": 1939.106,
+      "median": 1939.5235,
+      "max": 1947.659
+    }
+  },
+  "validation_command": ".venv/bin/python -m pytest tests/test_feature_equivalence.py tests/test_prepared_features.py tests/test_features.py tests/test_stream_observer.py tests/test_stream_backend_parity.py tests/test_stream_model.py tests/test_ml.py -q"
+}

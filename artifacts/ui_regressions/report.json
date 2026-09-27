@@ -1,0 +1,19 @@
+{
+  "passed": 11,
+  "checks": [
+    "entire network before vehicle selection, with failed background tiles",
+    "current target reason, probability, section and ACK visible at 1366×768 without inner scrolling",
+    "first lower forecast immediately updates card, list, marker, segment and count",
+    "historical incident uses its own target, segment, cause and ACK identifier",
+    "old prediction is marked stale even while telemetry is fresh",
+    "backend disconnect preserves last state, hides probabilities, and recovers",
+    "same-run restart accepts newer publication with reset sequence and rejects late old-process HTTP response",
+    "permanently closed EventSource is recreated and resumes live snapshots",
+    "NDTP demo/real scenario selection and JSON validation/import contracts",
+    "retrospective evaluation cannot appear as a current live warning",
+    "390px layout has no page overflow and prioritizes vehicles before map"
+  ],
+  "page_errors": [],
+  "isolation": "built frontend + intercepted API fixtures; no live stack requests",
+  "usability_5_second_test": "not performed; requires human participants"
+}

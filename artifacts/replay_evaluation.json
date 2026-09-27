@@ -1,0 +1,242 @@
+{
+  "created_at": "2026-09-26T15:04:26.733573+00:00",
+  "model_version": "delay-0a9a35c0aa9f",
+  "protocol": {
+    "sample_points": "supplied test points; same targets and times as the official metric",
+    "telemetry_availability": "receive_time <= T AND event_time <= T",
+    "cur_dev_source": "backend observer, or missing; never the supplied hint",
+    "observer": {
+      "radius_m": 75,
+      "consecutive_points": 2,
+      "max_point_gap_s": 60,
+      "plan_tolerance_s": 900,
+      "hint_max_age_s": 900,
+      "departure_radius_m": 100,
+      "ambiguous_candidate_policy": "do not confirm",
+      "activate_future_events": true
+    },
+    "retrained_or_tuned": false
+  },
+  "all_points_diagnostic": {
+    "rows": 353,
+    "mae_s": 196.8605106123368,
+    "brier_score": 0.1433568452148426,
+    "provided_cur_dev_baseline_mae_s": 93.35977337110482
+  },
+  "dispatcher_fresh_points": {
+    "rows": 350,
+    "mae_s": 196.95997702243434,
+    "brier_score": 0.14057098199072054,
+    "provided_cur_dev_baseline_mae_s": 92.7
+  },
+  "stale_or_missing_points": {
+    "rows": 3,
+    "mae_s": 185.25609610095816,
+    "brier_score": 0.4683742213624138,
+    "provided_cur_dev_baseline_mae_s": 170.33333333333334
+  },
+  "estimated_hint_points": {
+    "rows": 300,
+    "mae_s": 200.21255417246704,
+    "brier_score": 0.14905633387769573,
+    "provided_cur_dev_baseline_mae_s": 96.41333333333333
+  },
+  "missing_hint_points": {
+    "rows": 53,
+    "mae_s": 177.8866791399015,
+    "brier_score": 0.11109558863265503,
+    "provided_cur_dev_baseline_mae_s": 76.0754716981132
+  },
+  "coverage": {
+    "test_points": 353,
+    "fresh_points": 350,
+    "fresh_fraction": 0.9915014164305949,
+    "estimated_hint_points": 300,
+    "estimated_hint_fraction": 0.8498583569405099,
+    "fresh_and_estimated_points": 297,
+    "confirmed_visits": 3454,
+    "processed_telemetry_rows": 104155,
+    "late_events": 9181
+  },
+  "estimated_vs_provided_hint": {
+    "rows": 300,
+    "mae_s": 203.61333333333334
+  },
+  "official_provided_hint_metric": {
+    "rows": 353,
+    "mae_s": 70.61199527861244,
+    "zero_baseline_mae_s": 103.33711048158641,
+    "cur_dev_baseline_mae_s": 93.35977337110482,
+    "improves_cur_dev_baseline": true,
+    "brier_score": 0.12740961902071932,
+    "prevalence_baseline_brier": 0.18538024583662283,
+    "calibration_bins": [
+      {
+        "lower": 0.0,
+        "upper": 0.1,
+        "rows": 94,
+        "mean_probability": 0.050835106646028395,
+        "observed_late_rate": 0.010638297872340425
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "rows": 77,
+        "mean_probability": 0.14795221289464325,
+        "observed_late_rate": 0.11688311688311688
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.3,
+        "rows": 43,
+        "mean_probability": 0.24817804334603863,
+        "observed_late_rate": 0.13953488372093023
+      },
+      {
+        "lower": 0.3,
+        "upper": 0.4,
+        "rows": 27,
+        "mean_probability": 0.3510256630921155,
+        "observed_late_rate": 0.3333333333333333
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "rows": 29,
+        "mean_probability": 0.45220693493237635,
+        "observed_late_rate": 0.3448275862068966
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6,
+        "rows": 20,
+        "mean_probability": 0.5557490384735064,
+        "observed_late_rate": 0.35
+      },
+      {
+        "lower": 0.6,
+        "upper": 0.7,
+        "rows": 29,
+        "mean_probability": 0.6486878980083652,
+        "observed_late_rate": 0.5517241379310345
+      },
+      {
+        "lower": 0.7,
+        "upper": 0.8,
+        "rows": 12,
+        "mean_probability": 0.7499548020937818,
+        "observed_late_rate": 0.5833333333333334
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "rows": 14,
+        "mean_probability": 0.8457405544629772,
+        "observed_late_rate": 0.9285714285714286
+      },
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "rows": 8,
+        "mean_probability": 0.916137506111804,
+        "observed_late_rate": 1.0
+      }
+    ],
+    "groups": {
+      "vehicle": {
+        "129964": {
+          "rows": 26,
+          "mae_s": 61.21926365825819
+        },
+        "131672": {
+          "rows": 38,
+          "mae_s": 67.26085665469517
+        },
+        "134040": {
+          "rows": 52,
+          "mae_s": 67.33680742747794
+        },
+        "132430": {
+          "rows": 32,
+          "mae_s": 107.7974726620356
+        },
+        "130238": {
+          "rows": 7,
+          "mae_s": 24.08139874968872
+        },
+        "122048": {
+          "rows": 24,
+          "mae_s": 118.76026455584072
+        },
+        "133300": {
+          "rows": 28,
+          "mae_s": 51.28046877996991
+        },
+        "135081": {
+          "rows": 55,
+          "mae_s": 70.23274875674302
+        },
+        "133957": {
+          "rows": 41,
+          "mae_s": 69.135763692501
+        },
+        "122613": {
+          "rows": 25,
+          "mae_s": 39.117183884745785
+        },
+        "122658": {
+          "rows": 17,
+          "mae_s": 98.44727358947279
+        },
+        "130072": {
+          "rows": 2,
+          "mae_s": 9.862744937933652
+        },
+        "134494": {
+          "rows": 6,
+          "mae_s": 0.6820527478263676
+        }
+      },
+      "class": {
+        "ontime": {
+          "rows": 218,
+          "mae_s": 43.32958647341012
+        },
+        "early": {
+          "rows": 49,
+          "mae_s": 99.43220483698065
+        },
+        "late": {
+          "rows": 86,
+          "mae_s": 123.34891215272948
+        }
+      },
+      "cur_dev": {
+        "present": {
+          "rows": 353,
+          "mae_s": 70.61199527861244
+        }
+      },
+      "telemetry": {
+        "good": {
+          "rows": 315,
+          "mae_s": 74.13795135548278
+        },
+        "poor": {
+          "rows": 38,
+          "mae_s": 41.38367516771355
+        }
+      }
+    },
+    "batch_inference_s": 0.002913042000727728
+  },
+  "elapsed_s": 6.6396995409886586,
+  "limitations": [
+    "This diagnostic changes hint and receive-time availability together; it does not isolate their individual effects.",
+    "Fresh-subset MAE has different coverage from the all-point official MAE; compare counts before comparing scores.",
+    "The live dispatcher suppresses predictions on stale telemetry; all-point predictions here are diagnostic only.",
+    "Evaluation uses supplied forecast points, not every live 30-second prediction tick.",
+    "Observed visits are heuristic. Supplied and inferred deviations may refer to different prior stops.",
+    "The same single-period test set is reused for reporting; no new-day generalization is established."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "created_at": "2026-09-26T16:21:52.521881+00:00",
+  "profile": "stream",
+  "model_version": "stream-9a3614b81bad",
+  "feature_schema_version": "2.0.0",
+  "protocol": {
+    "sample_points": "supplied test targets and T, not every dispatcher tick",
+    "telemetry_availability": "receive_time <= T AND event_time <= T",
+    "cur_dev_source": "shared observer, or missing; never supplied hints",
+    "observer_version": "2.0.0",
+    "retrained_or_tuned": false
+  },
+  "all_points_diagnostic": {
+    "rows": 353,
+    "mae_s": 80.57635053912857,
+    "brier_score": 0.13430006657436822,
+    "zero_baseline_mae_s": 103.33711048158641,
+    "estimated_cur_dev_baseline_mae_s": 213.96033994334277
+  },
+  "dispatcher_eligible_points": {
+    "rows": 340,
+    "mae_s": 81.58018301389575,
+    "brier_score": 0.1329086256403872,
+    "zero_baseline_mae_s": 103.94705882352942,
+    "estimated_cur_dev_baseline_mae_s": 193.01764705882354
+  },
+  "dispatcher_fresh_points": {
+    "rows": 350,
+    "mae_s": 80.02154174696126,
+    "brier_score": 0.13332143684447503,
+    "zero_baseline_mae_s": 102.90857142857143,
+    "estimated_cur_dev_baseline_mae_s": 213.66857142857143
+  },
+  "stale_or_missing_points": {
+    "rows": 3,
+    "mae_s": 145.30404295864787,
+    "brier_score": 0.24847353506190775,
+    "zero_baseline_mae_s": 153.33333333333334,
+    "estimated_cur_dev_baseline_mae_s": 248.0
+  },
+  "estimated_hint_points": {
+    "rows": 299,
+    "mae_s": 81.9554736571429,
+    "brier_score": 0.1387155381685506,
+    "zero_baseline_mae_s": 105.57859531772576,
+    "estimated_cur_dev_baseline_mae_s": 236.18060200668896
+  },
+  "missing_hint_points": {
+    "rows": 54,
+    "mae_s": 72.94009475604913,
+    "brier_score": 0.10985143682139555,
+    "zero_baseline_mae_s": 90.92592592592592,
+    "estimated_cur_dev_baseline_mae_s": 90.92592592592592
+  },
+  "coverage": {
+    "test_points": 353,
+    "fresh_points": 350,
+    "fresh_fraction": 0.9915014164305949,
+    "estimated_hint_points": 299,
+    "estimated_hint_fraction": 0.8470254957507082,
+    "already_observed_targets": 10,
+    "eligible_points": 340,
+    "observed_segment_speed_points": 107
+  },
+  "elapsed_s": 5.109462000007625,
+  "limitations": [
+    "All-point diagnostics include stale/already-observed examples; dispatcher suppresses these.",
+    "This point-level protocol is not the continuous NDTP 30-second cadence test.",
+    "The same-period test set does not establish unseen-day generalization.",
+    "Stop matching remains heuristic; estimated hints may refer to different prior stops."
+  ]
+}

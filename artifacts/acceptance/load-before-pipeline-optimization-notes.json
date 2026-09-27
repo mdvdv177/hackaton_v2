@@ -1,0 +1,19 @@
+{
+  "report": "load-before-pipeline-optimization.json",
+  "project": "transport-load-a95a7ef7",
+  "outcome": "INTERRUPTED_DIAGNOSTIC_FAIL",
+  "reason": "Repeated model trigger-to-render latency exceeded 2 seconds with a nearly full 15-minute history. Stop, profile and fix before repeating the full protocol.",
+  "measurement_policy": "All observations remain in the raw report, including concurrent verification and diagnostic work. No samples were removed to improve p95.",
+  "shared_engine_activity_utc": [
+    {"from": "2026-09-26T16:54:37Z", "to": "2026-09-26T16:55:53Z", "activity": "Three isolated cold starts"},
+    {"from": "2026-09-26T16:56:35Z", "to": "2026-09-26T16:57:38Z", "activity": "Official emulator end-to-end check"},
+    {"from": "2026-09-26T16:58:03Z", "to": "2026-09-26T17:02:33Z", "activity": "Fault recovery checks and cleanup"},
+    {"from": "2026-09-26T17:03:08Z", "to": "2026-09-26T17:04:17Z", "activity": "PostgreSQL outage, direct SQL reconciliation and cleanup"},
+    {"around": "2026-09-26T17:08:00Z", "activity": "One bounded read-only SQL export of 89900 telemetry rows for native stage profiling; no production mutation"}
+  ],
+  "limitations": [
+    "This interrupted run does not prove hour-long capacity, either 500 events/s burst, or the final memory plateau.",
+    "Existing main and unrelated application containers remained running.",
+    "Native stage profiling excludes concurrent service work and is not an end-to-end latency result."
+  ]
+}

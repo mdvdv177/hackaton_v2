@@ -1,0 +1,37 @@
+{
+  "status": "NOT_RUN",
+  "data_source": "synthetic isolated UI fixtures",
+  "scenarios": [
+    {
+      "id": "high-risk",
+      "high_risk_vehicles": [
+        "v1"
+      ],
+      "high_risk_segments": [
+        "Площадь → Вокзал"
+      ],
+      "stale_vehicle": null,
+      "current_probability_for_stale_vehicle": null
+    },
+    {
+      "id": "multiple-risks",
+      "high_risk_vehicles": [
+        "v1",
+        "v2"
+      ],
+      "high_risk_segments": [
+        "Площадь → Вокзал",
+        "Парк → Больница"
+      ],
+      "stale_vehicle": null,
+      "current_probability_for_stale_vehicle": null
+    },
+    {
+      "id": "stale",
+      "high_risk_vehicles": [],
+      "high_risk_segments": [],
+      "stale_vehicle": "v1",
+      "current_probability_for_stale_vehicle": null
+    }
+  ]
+}

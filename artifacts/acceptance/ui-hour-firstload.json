@@ -1,0 +1,58 @@
+{
+  "url": "http://127.0.0.1:61574/",
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "first_100_vehicles_observed_ms": 651.2887477874756,
+  "renders": [
+    {
+      "event_id": null,
+      "rendered_at": 1790440725120,
+      "count": 0,
+      "run_id": null
+    },
+    {
+      "event_id": 59,
+      "rendered_at": 1790440725525,
+      "count": 100,
+      "run_id": "e18011a3-17e3-49ec-9366-df2c54290b8a"
+    },
+    {
+      "event_id": 59,
+      "rendered_at": 1790440725661,
+      "count": 100,
+      "run_id": "e18011a3-17e3-49ec-9366-df2c54290b8a"
+    },
+    {
+      "event_id": 59,
+      "rendered_at": 1790440725782,
+      "count": 100,
+      "run_id": "e18011a3-17e3-49ec-9366-df2c54290b8a"
+    },
+    {
+      "event_id": 60,
+      "rendered_at": 1790440726382,
+      "count": 100,
+      "run_id": "e18011a3-17e3-49ec-9366-df2c54290b8a"
+    },
+    {
+      "event_id": 61,
+      "rendered_at": 1790440727408,
+      "count": 100,
+      "run_id": "e18011a3-17e3-49ec-9366-df2c54290b8a"
+    },
+    {
+      "event_id": 62,
+      "rendered_at": 1790440728358,
+      "count": 100,
+      "run_id": "e18011a3-17e3-49ec-9366-df2c54290b8a"
+    }
+  ],
+  "vehicle_rows": 100,
+  "network_segments": 2700,
+  "errors": [],
+  "blocked_mutations": [],
+  "body_scroll_width": 1366,
+  "horizontal_overflow": false
+}

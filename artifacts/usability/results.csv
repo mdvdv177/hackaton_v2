@@ -1,0 +1,2 @@
+status,participant_id,scenario_id,response_time_s,vehicles_answer,segments_answer,stale_answer,correct,notes
+NOT_RUN,,,,,,,,Awaiting human participants

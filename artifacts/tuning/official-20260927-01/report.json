@@ -1,0 +1,90 @@
+{
+  "status": "NO_CONFIRMED_IMPROVEMENT",
+  "phase": "completed",
+  "started_at": "2026-09-27T09:40:29.311460+00:00",
+  "trials": 50,
+  "seed": 20260926,
+  "test_read": false,
+  "validate_read": false,
+  "active_model_replaced": false,
+  "limitations": [
+    "The third fold was already used in the original baseline development; it is reserved for this search, not a pristine holdout.",
+    "Three random seeds test optimization stability; they are not independent data samples.",
+    "A one-second acceptance margin is an operational rule, not statistical significance.",
+    "Real labels cover one period; no new-day generalization is established."
+  ],
+  "real_training_rows": 1141,
+  "feature_count": 55,
+  "baseline_oof_mae_s": 77.90547666211343,
+  "shortlisted_config_ids": [
+    "trial_036",
+    "trial_039",
+    "trial_020"
+  ],
+  "finalist": {
+    "config_id": "trial_036",
+    "mean_pooled_mae_s": 70.64956264609204,
+    "baseline_mean_pooled_mae_s": 72.29324550026381,
+    "improvement_s": 1.6436828541717716,
+    "fold_means": [
+      70.91885517993141,
+      70.38159017369306
+    ],
+    "baseline_fold_means": [
+      73.05690096214902,
+      71.53333344750547
+    ],
+    "seed_wins": 3,
+    "seeds": [
+      20260926,
+      20260927,
+      20260928
+    ],
+    "iterations": 89,
+    "inner_iterations": [
+      121,
+      93,
+      38,
+      85,
+      79,
+      273
+    ],
+    "seed": 20260926,
+    "params": {
+      "iterations": 89,
+      "depth": 5,
+      "learning_rate": 0.1,
+      "loss_function": "MAE",
+      "random_seed": 20260926,
+      "thread_count": 2,
+      "verbose": false,
+      "allow_writing_files": false,
+      "bootstrap_type": "MVS",
+      "subsample": 0.8,
+      "l2_leaf_reg": 20,
+      "random_strength": 0.0
+    },
+    "frozen_at": "2026-09-27T09:43:44.836922+00:00",
+    "feature_schema_version": "1.0.0",
+    "prediction_mode": "residual",
+    "training_cohort": "real-only",
+    "confirmation_attempts_allowed": 1
+  },
+  "confirmation": {
+    "finalist_sha256": "9a82d2c76f44d8a8cb4263475c3a097e4a27b270db8a31e6295a5e3ba34672da",
+    "fold": 2,
+    "candidate_mae_s": 88.82310505887313,
+    "baseline_mae_s": 88.93979637130465,
+    "improvement_s": 0.1166913124315272,
+    "required_improvement_s": 1.0,
+    "confirmed": false,
+    "iterations": 89,
+    "seed": 20260926,
+    "rows": 222,
+    "completed_at": "2026-09-27T09:43:44.993559+00:00"
+  },
+  "reason": "Frozen candidate failed the one-time third-fold margin; no runner-up evaluated",
+  "finished_at": "2026-09-27T09:43:45.065087+00:00",
+  "elapsed_s": 195.80309695799951,
+  "integrity_unchanged": true
+}

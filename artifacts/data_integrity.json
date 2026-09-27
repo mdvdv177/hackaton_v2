@@ -1,0 +1,21 @@
+{
+  "source_checks": {
+    "train/traffic.csv": {
+      "sha256": "1890b36e19765c970b3db3c15fc372e2c6dfcc2b20380679637be9115fe303cd",
+      "matches_training_input": true
+    },
+    "train/schedule.csv": {
+      "sha256": "f7c109efd50d358d202b6c1fc5a7cb5be14ccc489c7adb5f3fd897e326512115",
+      "matches_training_input": true
+    },
+    "labels/labels_train.csv": {
+      "sha256": "b3058d52683091e77d190d6a99b717ad5c44ae02de37cadf47123dd3c534361d",
+      "matches_training_input": true
+    }
+  },
+  "submission_rows": 151,
+  "submission_unique": true,
+  "template_order_preserved": true,
+  "finite_predictions": true,
+  "negative_predictions": 42
+}

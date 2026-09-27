@@ -1,0 +1,14 @@
+{
+  "source_hashes_match_initial": {
+    "train/traffic.csv": true,
+    "train/schedule.csv": true,
+    "labels/labels_train.csv": true
+  },
+  "submission": {
+    "rows": 151,
+    "same_order": true,
+    "unique": true,
+    "finite": true,
+    "negative": 42
+  }
+}

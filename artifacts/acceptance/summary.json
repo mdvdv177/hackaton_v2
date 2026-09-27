@@ -1,0 +1,491 @@
+{
+  "generated_at": "2026-09-26T17:56:56.298006+00:00",
+  "load": {
+    "status": "DEFERRED_BY_USER",
+    "recorded_at": "2026-09-26T17:56:34+00:00",
+    "reason": "Пользователь указал: «продолжи, но остановись прежде чем давать часовую нагрузку».",
+    "final_release_hour_started": false,
+    "hourly_stability_confirmed": false,
+    "requested_protocol": {
+      "duration_s": 3600,
+      "vehicles": 100,
+      "events_per_second": 100,
+      "bursts": [
+        {
+          "start_s": 1200,
+          "end_s": 1260,
+          "events_per_second": 500
+        },
+        {
+          "start_s": 2400,
+          "end_s": 2460,
+          "events_per_second": 500
+        }
+      ]
+    },
+    "release_reference": "warm-history.json",
+    "python_image": "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c",
+    "historical_incomplete_attempts": [
+      "load-before-feature-optimization.json",
+      "load-before-pipeline-optimization.json"
+    ],
+    "historical_durability_only": "load-durability-before-pipeline-optimization.json",
+    "note": "Короткие проверки последней сборки завершены. Прежние прерванные попытки сохранены и не подтверждают прохождение часового протокола. Новый часовой прогон и SQL-наблюдатель не запускались.",
+    "passed": null,
+    "full_acceptance": false,
+    "source_report": null,
+    "chart": null,
+    "final_system": null
+  },
+  "faults": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "initial live stream forecast rendered",
+        "passed": true
+      },
+      {
+        "name": "NDTP disconnect → last position/stale UI → reconnect/model UI",
+        "passed": true
+      },
+      {
+        "name": "60s ML outage → explicit baseline/no probability → model restored",
+        "passed": true
+      },
+      {
+        "name": "30s PostgreSQL outage → bounded queue → automatic recovery",
+        "passed": true,
+        "admitted_barrier": 155,
+        "readiness_recovery_s": 0.798918832995696,
+        "queue_drained_recovery_s": 1.0577969169971766,
+        "recovery_s": 1.0577969169971766
+      },
+      {
+        "name": "abrupt backend recreation → same run → TCP/SSE/UI recover",
+        "passed": true,
+        "ack_verified": false
+      }
+    ],
+    "images_unchanged": true,
+    "images": "[{\"ID\":\"sha256:6734be14d777d0b92ea4bcaea24bbbef43983c19a3345ef96f5d3414ab40d2d4\",\"ContainerName\":\"transport-fault-09ac6ac4c3-frontend-1\",\"Repository\":\"transport-predictor-frontend\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":76534614,\"Created\":\"2026-09-26T16:42:27.759538429Z\",\"LastTagTime\":\"2026-09-26T16:48:51.864477634Z\"},{\"ID\":\"sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c\",\"ContainerName\":\"transport-fault-09ac6ac4c3-ml-1\",\"Repository\":\"transport-predictor-python\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":1408972679,\"Created\":\"2026-09-26T17:36:55.150873501Z\",\"LastTagTime\":\"2026-09-26T17:36:55.203593959Z\"},{\"ID\":\"sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c\",\"ContainerName\":\"transport-fault-09ac6ac4c3-backend-1\",\"Repository\":\"transport-predictor-python\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":1408972679,\"Created\":\"2026-09-26T17:36:55.150873501Z\",\"LastTagTime\":\"2026-09-26T17:36:55.203593959Z\"},{\"ID\":\"sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24\",\"ContainerName\":\"transport-fault-09ac6ac4c3-postgres-1\",\"Repository\":\"postgres\",\"Tag\":\"17-alpine\",\"Platform\":\"linux/arm64/v8\",\"Size\":414818382,\"Created\":\"2026-09-17T21:31:46.755310538Z\",\"LastTagTime\":\"2026-09-26T15:01:00.972673133Z\"}]\n\n",
+    "project": "transport-fault-09ac6ac4c3",
+    "started_at": "2026-09-26T17:46:17.788995+00:00",
+    "finished_at": "2026-09-26T17:50:41.296096+00:00",
+    "browser_errors": []
+  },
+  "cold_start": {
+    "passed": true,
+    "successful_runs": 3,
+    "ready_median_s": 17.396566499999608,
+    "ready_max_s": 17.55876500000886,
+    "first_prediction_ui_median_s": 18.768370749996393,
+    "first_prediction_ui_max_s": 19.21957954199752,
+    "created_at": "2026-09-26T17:43:23.209836+00:00",
+    "protocol": "Prebuilt local images, new PostgreSQL volume for every isolated project; no existing stack changes."
+  },
+  "ndtp_official": {
+    "passed": true,
+    "checks": [
+      "official emulator nested fields",
+      "NDTP CRC/handshake and navigation",
+      "current plan matching and estimated deviation",
+      "real stream model forecast",
+      "publication in 10–15 minute planned horizon",
+      "SSE delivery",
+      "same forecast rendered in browser"
+    ],
+    "elapsed_to_prediction_ui_s": 28.441563041997142,
+    "images": [
+      {
+        "ID": "sha256:0a218bbfb38cbf797c47cfddcc2ba52c2143332cad16e2a01e8f1d811293f5f4",
+        "ContainerName": "transport-ndtp-check-e1c8ec74acfc-emulator-1",
+        "Repository": "ndtp-telemetry-emulator",
+        "Tag": "1.0",
+        "Platform": "linux/amd64",
+        "Size": 487385635,
+        "Created": "2026-09-11T08:15:14.936077625Z",
+        "LastTagTime": "2026-09-26T12:20:15.180493051Z"
+      },
+      {
+        "ID": "sha256:6734be14d777d0b92ea4bcaea24bbbef43983c19a3345ef96f5d3414ab40d2d4",
+        "ContainerName": "transport-ndtp-check-e1c8ec74acfc-frontend-1",
+        "Repository": "transport-predictor-frontend",
+        "Tag": "local",
+        "Platform": "linux/arm64",
+        "Size": 76534614,
+        "Created": "2026-09-26T16:42:27.759538429Z",
+        "LastTagTime": "2026-09-26T16:48:51.864477634Z"
+      },
+      {
+        "ID": "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c",
+        "ContainerName": "transport-ndtp-check-e1c8ec74acfc-ml-1",
+        "Repository": "transport-predictor-python",
+        "Tag": "local",
+        "Platform": "linux/arm64",
+        "Size": 1408972679,
+        "Created": "2026-09-26T17:36:55.150873501Z",
+        "LastTagTime": "2026-09-26T17:36:55.203593959Z"
+      },
+      {
+        "ID": "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c",
+        "ContainerName": "transport-ndtp-check-e1c8ec74acfc-backend-1",
+        "Repository": "transport-predictor-python",
+        "Tag": "local",
+        "Platform": "linux/arm64",
+        "Size": 1408972679,
+        "Created": "2026-09-26T17:36:55.150873501Z",
+        "LastTagTime": "2026-09-26T17:36:55.203593959Z"
+      },
+      {
+        "ID": "sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+        "ContainerName": "transport-ndtp-check-e1c8ec74acfc-postgres-1",
+        "Repository": "postgres",
+        "Tag": "17-alpine",
+        "Platform": "linux/arm64/v8",
+        "Size": 414818382,
+        "Created": "2026-09-17T21:31:46.755310538Z",
+        "LastTagTime": "2026-09-26T15:01:00.972673133Z"
+      }
+    ],
+    "project": "transport-ndtp-check-e1c8ec74acfc",
+    "created_at": "2026-09-26T17:44:58.466419+00:00",
+    "run_id": "6f4ba0f3-ac23-4218-a1ea-8badb9c9aaf6",
+    "browser_errors": [],
+    "owned_resources_removed": true
+  },
+  "demo_ndtp": {
+    "passed": true,
+    "first_prediction_ui_s": 3.646414208007627,
+    "first_model_prediction_s": 3.045430458005285,
+    "images_unchanged": true,
+    "images": [
+      {
+        "ID": "sha256:6734be14d777d0b92ea4bcaea24bbbef43983c19a3345ef96f5d3414ab40d2d4",
+        "ContainerName": "transport-demo-check-f21bc9511c8a-frontend-1",
+        "Repository": "transport-predictor-frontend",
+        "Tag": "local",
+        "Platform": "linux/arm64",
+        "Size": 76534614,
+        "Created": "2026-09-26T16:42:27.759538429Z",
+        "LastTagTime": "2026-09-26T16:48:51.864477634Z"
+      },
+      {
+        "ID": "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c",
+        "ContainerName": "transport-demo-check-f21bc9511c8a-ml-1",
+        "Repository": "transport-predictor-python",
+        "Tag": "local",
+        "Platform": "linux/arm64",
+        "Size": 1408972679,
+        "Created": "2026-09-26T17:36:55.150873501Z",
+        "LastTagTime": "2026-09-26T17:36:55.203593959Z"
+      },
+      {
+        "ID": "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c",
+        "ContainerName": "transport-demo-check-f21bc9511c8a-backend-1",
+        "Repository": "transport-predictor-python",
+        "Tag": "local",
+        "Platform": "linux/arm64",
+        "Size": 1408972679,
+        "Created": "2026-09-26T17:36:55.150873501Z",
+        "LastTagTime": "2026-09-26T17:36:55.203593959Z"
+      },
+      {
+        "ID": "sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+        "ContainerName": "transport-demo-check-f21bc9511c8a-postgres-1",
+        "Repository": "postgres",
+        "Tag": "17-alpine",
+        "Platform": "linux/arm64/v8",
+        "Size": 414818382,
+        "Created": "2026-09-17T21:31:46.755310538Z",
+        "LastTagTime": "2026-09-26T15:01:00.972673133Z"
+      }
+    ],
+    "project": "transport-demo-check-f21bc9511c8a",
+    "created_at": "2026-09-26T17:53:09.454153+00:00",
+    "finished_at": "2026-09-26T17:54:33.092600+00:00",
+    "protocol": "Original test traffic over TCP with demo manifest shift; default zero warmup; 1x clock",
+    "browser_errors": [],
+    "owned_resources_removed": true,
+    "duration_s": 60,
+    "sender_stop_leaves_run_active": true
+  },
+  "PG": {
+    "passed": true,
+    "images": [
+      {
+        "ID": "sha256:6734be14d777d0b92ea4bcaea24bbbef43983c19a3345ef96f5d3414ab40d2d4",
+        "ContainerName": "transport-pg-5d7a927130-frontend-1",
+        "Repository": "transport-predictor-frontend",
+        "Tag": "local",
+        "Platform": "linux/arm64",
+        "Size": 76534614,
+        "Created": "2026-09-26T16:42:27.759538429Z",
+        "LastTagTime": "2026-09-26T16:48:51.864477634Z"
+      },
+      {
+        "ID": "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c",
+        "ContainerName": "transport-pg-5d7a927130-backend-1",
+        "Repository": "transport-predictor-python",
+        "Tag": "local",
+        "Platform": "linux/arm64",
+        "Size": 1408972679,
+        "Created": "2026-09-26T17:36:55.150873501Z",
+        "LastTagTime": "2026-09-26T17:36:55.203593959Z"
+      },
+      {
+        "ID": "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c",
+        "ContainerName": "transport-pg-5d7a927130-ml-1",
+        "Repository": "transport-predictor-python",
+        "Tag": "local",
+        "Platform": "linux/arm64",
+        "Size": 1408972679,
+        "Created": "2026-09-26T17:36:55.150873501Z",
+        "LastTagTime": "2026-09-26T17:36:55.203593959Z"
+      },
+      {
+        "ID": "sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+        "ContainerName": "transport-pg-5d7a927130-postgres-1",
+        "Repository": "postgres",
+        "Tag": "17-alpine",
+        "Platform": "linux/arm64/v8",
+        "Size": 414818382,
+        "Created": "2026-09-17T21:31:46.755310538Z",
+        "LastTagTime": "2026-09-26T15:01:00.972673133Z"
+      }
+    ],
+    "project": "transport-pg-5d7a927130",
+    "started_at": "2026-09-26T17:51:21.362317+00:00",
+    "finished_at": "2026-09-26T17:52:13.230607+00:00",
+    "run_id": "ed75f551-aa95-4e22-84f8-072a83cfb2c4",
+    "protocol": "1 vehicle/second; 30s PostgreSQL outage; continued NDTP; recovery from compose start through committed inbox and run checkpoint, <=10s.",
+    "admitted_barrier": 33,
+    "admitted_during_outage": 30,
+    "readiness_recovery_s": 1.0463913749990752,
+    "durable_recovery_s": 1.1696064580028178,
+    "sender_packets": 34,
+    "sender_failures": 0,
+    "final_sql_snapshot": {
+      "database_at": "2026-09-26T17:52:13.216466+00:00",
+      "run_id": "ed75f551-aa95-4e22-84f8-072a83cfb2c4",
+      "transaction_read_only": "on",
+      "telemetry_events": 34,
+      "inbox_total": 34,
+      "inbox_pending": 0,
+      "inbox_applied": 34,
+      "checkpoint_telemetry_count": 34,
+      "checkpoint_virtual_time": "2026-09-26T17:52:13.099094+00:00",
+      "recovery_elapsed_s": 1.1670602499943925
+    }
+  },
+  "warm-history": {
+    "passed": true,
+    "checks": {
+      "each_vehicle_has_three_postwarm_model_renders": true,
+      "all_postwarm_models_have_900s_history": true,
+      "all_model_run_ids_match": true,
+      "all_publication_horizons_valid": true,
+      "telemetry_received_to_rendered_p95_le_2s": true,
+      "prediction_triggered_to_rendered_p95_le_2s": true,
+      "warmup_complete": true,
+      "measurement_complete": true,
+      "sender_kept_cadence": true,
+      "no_sender_or_ingress_failures": true,
+      "same_container_images": true,
+      "runtime_code_matches_workspace": true,
+      "durable_all_sent_applied": true,
+      "no_js_errors": true,
+      "final_ui_fresh_all_vehicles": true,
+      "continuous_ui_all_vehicles": true,
+      "ui_minute_coverage_ge_99pct": true,
+      "measurement_sampling_gap_le_10s": true
+    },
+    "images": "[{\"ID\":\"sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24\",\"ContainerName\":\"transport-warm-b9ba66a6e3-postgres-1\",\"Repository\":\"postgres\",\"Tag\":\"17-alpine\",\"Platform\":\"linux/arm64/v8\",\"Size\":414818382,\"Created\":\"2026-09-17T21:31:46.755310538Z\",\"LastTagTime\":\"2026-09-26T15:01:00.972673133Z\"},{\"ID\":\"sha256:6734be14d777d0b92ea4bcaea24bbbef43983c19a3345ef96f5d3414ab40d2d4\",\"ContainerName\":\"transport-warm-b9ba66a6e3-frontend-1\",\"Repository\":\"transport-predictor-frontend\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":76534614,\"Created\":\"2026-09-26T16:42:27.759538429Z\",\"LastTagTime\":\"2026-09-26T16:48:51.864477634Z\"},{\"ID\":\"sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c\",\"ContainerName\":\"transport-warm-b9ba66a6e3-ml-1\",\"Repository\":\"transport-predictor-python\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":1408972679,\"Created\":\"2026-09-26T17:36:55.150873501Z\",\"LastTagTime\":\"2026-09-26T17:36:55.203593959Z\"},{\"ID\":\"sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c\",\"ContainerName\":\"transport-warm-b9ba66a6e3-backend-1\",\"Repository\":\"transport-predictor-python\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":1408972679,\"Created\":\"2026-09-26T17:36:55.150873501Z\",\"LastTagTime\":\"2026-09-26T17:36:55.203593959Z\"}]\n\n",
+    "project": "transport-warm-b9ba66a6e3",
+    "started_at": "2026-09-26T17:37:45.702045+00:00",
+    "finished_at": "2026-09-26T17:43:14.043070+00:00",
+    "run_id": "2825ba6a-eae0-48ae-99a9-69cd672d35c7",
+    "protocol": {
+      "warm_history_points_per_vehicle": 900,
+      "warm_events_per_second": 500,
+      "warm_duration_s": 180.0,
+      "initial_event_age_s": 720.0,
+      "measurement_events_per_second": 100,
+      "measurement_duration_s": 120,
+      "latency": "postwarm triggered_at to React commit; coalesced latest telemetry received_at to React",
+      "history_proof": "each of 100 vehicles >=3 postwarm models, every reported history_points >=890",
+      "limitation": "Accelerated past-event receipt is a diagnostic, not an unmodified one-hour real-time protocol"
+    },
+    "full_acceptance": false,
+    "kind": "accelerated_history_diagnostic",
+    "browser": {
+      "errors": [],
+      "sse_snapshots": 304,
+      "telemetry_received_to_rendered": {
+        "samples": 11700,
+        "invalid_samples": 0,
+        "p50_ms": 779.5,
+        "p95_ms": 1209,
+        "max_ms": 1326
+      },
+      "prediction_triggered_to_rendered": {
+        "samples": 400,
+        "invalid_samples": 0,
+        "p50_ms": 472.5,
+        "p95_ms": 542,
+        "max_ms": 544
+      }
+    },
+    "warmup": {
+      "sent": 90000,
+      "expected": 90000,
+      "actual_s": 180.0067224589875,
+      "max_sender_lag_s": 0.012975334000657313
+    },
+    "measurement_sender": {
+      "sent": 12000,
+      "expected": 12000,
+      "max_sender_lag_s": 0.0113527920038905
+    },
+    "durable_counts": {
+      "database_at": "2026-09-26T17:43:11.877395+00:00",
+      "run_id": "2825ba6a-eae0-48ae-99a9-69cd672d35c7",
+      "transaction_read_only": "on",
+      "telemetry_events": 102000,
+      "inbox_total": 102000,
+      "inbox_pending": 0,
+      "inbox_applied": 102000,
+      "checkpoint_telemetry_count": 102000,
+      "checkpoint_virtual_time": "2026-09-26T17:43:08.150653+00:00"
+    },
+    "owned_resources_removed": true,
+    "duration_s": 120,
+    "derived_history_summary": {
+      "vehicles": 100,
+      "min_history_points": 899,
+      "max_history_points": 899,
+      "min_model_renders": 4
+    },
+    "derived_postwarm_stages": {
+      "selection": "Unique observed completed batches by prediction_stages_cutoff_at within postwarm measurement interval; no interpolation for unobserved batches",
+      "batch_count": 4,
+      "cutoffs": [
+        "2026-09-26T17:41:37.160362+00:00",
+        "2026-09-26T17:42:07.193556+00:00",
+        "2026-09-26T17:42:37.241418+00:00",
+        "2026-09-26T17:43:07.327663+00:00"
+      ],
+      "stages": {
+        "candidate_commit_ms": {
+          "samples": 4,
+          "invalid_samples": 0,
+          "p50_ms": 23.1525,
+          "p95_ms": 23.923,
+          "max_ms": 23.923
+        },
+        "feature_build_ms": {
+          "samples": 4,
+          "invalid_samples": 0,
+          "p50_ms": 184.56,
+          "p95_ms": 240.297,
+          "max_ms": 240.297
+        },
+        "feature_wait_ms": {
+          "samples": 4,
+          "invalid_samples": 0,
+          "p50_ms": 0.3685,
+          "p95_ms": 0.684,
+          "max_ms": 0.684
+        },
+        "final_commit_ms": {
+          "samples": 4,
+          "invalid_samples": 0,
+          "p50_ms": 47.0105,
+          "p95_ms": 55.86,
+          "max_ms": 55.86
+        },
+        "inference_ms": {
+          "samples": 4,
+          "invalid_samples": 0,
+          "p50_ms": 173.32999999999998,
+          "p95_ms": 225.695,
+          "max_ms": 225.695
+        },
+        "publication_ms": {
+          "samples": 4,
+          "invalid_samples": 0,
+          "p50_ms": 17.1995,
+          "p95_ms": 22.669,
+          "max_ms": 22.669
+        },
+        "scheduler_wait_ms": {
+          "samples": 4,
+          "invalid_samples": 0,
+          "p50_ms": 8.239,
+          "p95_ms": 10.958,
+          "max_ms": 10.958
+        },
+        "snapshot_ms": {
+          "samples": 4,
+          "invalid_samples": 0,
+          "p50_ms": 37.543,
+          "p95_ms": 45.289,
+          "max_ms": 45.289
+        },
+        "total_ms": {
+          "samples": 4,
+          "invalid_samples": 0,
+          "p50_ms": 480.70000000000005,
+          "p95_ms": 546.57,
+          "max_ms": 546.57
+        }
+      }
+    }
+  },
+  "release_consistency": {
+    "reference_report": "warm-history.json",
+    "reference_images": [
+      [
+        "postgres",
+        "sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24"
+      ],
+      [
+        "transport-predictor-frontend",
+        "sha256:6734be14d777d0b92ea4bcaea24bbbef43983c19a3345ef96f5d3414ab40d2d4"
+      ],
+      [
+        "transport-predictor-python",
+        "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c"
+      ],
+      [
+        "transport-predictor-python",
+        "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c"
+      ]
+    ],
+    "matches_reference_images": {
+      "faults": true,
+      "cold_start": true,
+      "ndtp_official": true,
+      "demo_ndtp": true,
+      "PG": true,
+      "warm-history": true
+    },
+    "missing_reports": [],
+    "passed": true
+  },
+  "short_acceptance": {
+    "reports": [
+      "PG",
+      "cold_start",
+      "demo_ndtp",
+      "faults",
+      "ndtp_official",
+      "warm-history"
+    ],
+    "passed": true,
+    "confirms_hourly_stability": false
+  },
+  "external_checks": {
+    "human_five_second_usability": "NOT_RUN",
+    "real_carrier_route_geometry": "NOT_SUPPLIED"
+  }
+}

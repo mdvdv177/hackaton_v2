@@ -1,0 +1,14 @@
+.venv
+**/node_modules
+**/__pycache__
+.pytest_cache
+.git
+.DS_Store
+.env
+dataset
+frontend
+artifacts/runtime
+artifacts/screenshots
+artifacts/*.log
+docs/_build
+*.pdf

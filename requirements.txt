@@ -1,0 +1,12 @@
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+scikit-learn==1.9.1
+catboost==1.2.10
+fastapi==0.141.1
+pydantic==2.13.5
+uvicorn[standard]==0.54.0
+httpx==0.28.1
+SQLAlchemy==2.1.1
+psycopg[binary]==3.3.6
+prometheus-client==0.26.0

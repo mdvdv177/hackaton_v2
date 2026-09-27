@@ -1,0 +1,13 @@
+{
+  "finalist_sha256": "9a82d2c76f44d8a8cb4263475c3a097e4a27b270db8a31e6295a5e3ba34672da",
+  "fold": 2,
+  "candidate_mae_s": 88.82310505887313,
+  "baseline_mae_s": 88.93979637130465,
+  "improvement_s": 0.1166913124315272,
+  "required_improvement_s": 1.0,
+  "confirmed": false,
+  "iterations": 89,
+  "seed": 20260926,
+  "rows": 222,
+  "completed_at": "2026-09-27T09:43:44.993559+00:00"
+}

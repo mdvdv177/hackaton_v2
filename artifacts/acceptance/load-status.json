@@ -1,0 +1,24 @@
+{
+  "status": "DEFERRED_BY_USER",
+  "recorded_at": "2026-09-26T17:56:34+00:00",
+  "reason": "Пользователь указал: «продолжи, но остановись прежде чем давать часовую нагрузку».",
+  "final_release_hour_started": false,
+  "hourly_stability_confirmed": false,
+  "requested_protocol": {
+    "duration_s": 3600,
+    "vehicles": 100,
+    "events_per_second": 100,
+    "bursts": [
+      {"start_s": 1200, "end_s": 1260, "events_per_second": 500},
+      {"start_s": 2400, "end_s": 2460, "events_per_second": 500}
+    ]
+  },
+  "release_reference": "warm-history.json",
+  "python_image": "sha256:8fc5734eb0b5a7eb2adbca3f40959b494f2aff1f47f80e2b45ca3362d145077c",
+  "historical_incomplete_attempts": [
+    "load-before-feature-optimization.json",
+    "load-before-pipeline-optimization.json"
+  ],
+  "historical_durability_only": "load-durability-before-pipeline-optimization.json",
+  "note": "Короткие проверки последней сборки завершены. Прежние прерванные попытки сохранены и не подтверждают прохождение часового протокола. Новый часовой прогон и SQL-наблюдатель не запускались."
+}

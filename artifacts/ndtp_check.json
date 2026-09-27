@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "unit_id": "893159",
+  "tr_id": "122048",
+  "system": {
+    "backend_status": "ok",
+    "ml_status": "unavailable",
+    "model_version": null,
+    "active_vehicles": 1,
+    "stale_vehicles": 0,
+    "queue_depth": 0,
+    "processing_latency_p95_ms": 0,
+    "telemetry_per_second": 0.14,
+    "last_error": null,
+    "ndtp_errors": 0,
+    "ndtp": {
+      "connections": 1,
+      "active_connections": 1,
+      "handshakes": 1,
+      "frames": 4,
+      "events": 3
+    },
+    "telemetry_count": 3,
+    "duplicates": 0,
+    "late_events": 0,
+    "unknown_devices": 0,
+    "ml_failures": 0,
+    "predictions_count": 0,
+    "processing_latency_ms": 0,
+    "invalid_events": 0,
+    "ignored_live_events": 0,
+    "dropped_live_events": 0
+  },
+  "vehicle": {
+    "id": "122048",
+    "lat": 55.59843,
+    "lon": 37.729168,
+    "speed": 25.0,
+    "event_time": "2026-09-26T15:19:24+00:00",
+    "position_age_s": 0.44412,
+    "stale": false,
+    "cur_dev_s": null,
+    "cur_dev_source": "missing",
+    "prediction": null,
+    "telemetry_age_s": 0.444076
+  },
+  "emulator_cell_format": {
+    "type": "G6CellNav00",
+    "fields": {
+      "longitude": 377291680,
+      "latitude": 555984300,
+      "speedAvg": 25,
+      "course": 90,
+      "extraDopBit5": true,
+      "extraDopBit6": true,
+      "extraDopBit7": true
+    }
+  },
+  "limitation": "The emulator timestamps packets now; the supplied schedule is January 2026. No matching current-time target is expected."
+}

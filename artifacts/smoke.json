@@ -1,0 +1,19 @@
+{
+  "passed": 12,
+  "checks": [
+    "/health/live",
+    "/health/ready",
+    "/docs",
+    "/openapi.json",
+    "/metrics",
+    "invalid speed rejected",
+    "dispatcher telemetry → model → predictions, horizons valid",
+    "vehicle detail without schedule facts",
+    "incident acknowledgement",
+    "pause/resume virtual clock",
+    "SSE reconnect reset for unavailable cursor",
+    "official point HTTP prediction equals offline artifact"
+  ],
+  "url": "http://127.0.0.1:8010",
+  "finished_at": "2026-09-26T18:20:02.663381"
+}

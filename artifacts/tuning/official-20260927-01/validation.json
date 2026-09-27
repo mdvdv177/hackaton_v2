@@ -1,0 +1,18 @@
+{
+  "full_python_suite": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 180,
+    "duration_s": 32.34,
+    "warnings": 1
+  },
+  "tuning_tests": 17,
+  "configurations": 50,
+  "completed_evaluations": 58,
+  "failed_evaluations": 0,
+  "fit_calls": 228,
+  "elapsed_s": 195.80309695799951,
+  "no_candidate_model_or_submission_exported": true,
+  "test_evaluation_performed": false,
+  "validate_inference_performed": false,
+  "immutable_files_unchanged": true
+}

@@ -1,0 +1,286 @@
+{
+  "profile": "stream",
+  "model_version": "stream-9a3614b81bad",
+  "quality_status": "validated_on_train_folds",
+  "created_at": "2026-09-26T16:15:45.691872+00:00",
+  "selection": {
+    "selected": {
+      "mode": "direct",
+      "oof_mae_s": 87.83260364117591,
+      "fold_mae_s": [
+        84.99193905482039,
+        77.85217872651799,
+        99.60134955838484
+      ]
+    },
+    "experiments": [
+      {
+        "mode": "zero",
+        "oof_mae_s": 97.35612082670906,
+        "fold_mae_s": [
+          88.6256157635468,
+          80.38235294117646,
+          120.93693693693693
+        ]
+      },
+      {
+        "mode": "cur_dev",
+        "oof_mae_s": 157.68998410174882,
+        "fold_mae_s": [
+          149.1871921182266,
+          129.10294117647058,
+          191.73423423423424
+        ]
+      },
+      {
+        "mode": "direct",
+        "oof_mae_s": 87.83260364117591,
+        "fold_mae_s": [
+          84.99193905482039,
+          77.85217872651799,
+          99.60134955838484
+        ]
+      },
+      {
+        "mode": "residual",
+        "oof_mae_s": 90.3668891566131,
+        "fold_mae_s": [
+          88.15771206851959,
+          75.59214688286156,
+          105.96378272746126
+        ]
+      }
+    ],
+    "folds": [
+      {
+        "validation_start": "2026-01-06T11:20:00+00:00",
+        "validation_end": "2026-01-06T14:30:00+00:00",
+        "training_cutoff": "2026-01-06T10:50:00+00:00",
+        "real_training_rows": 475,
+        "augmented_training_rows": 475,
+        "validation_rows": 203,
+        "target_visits_disjoint": true,
+        "purge_s": 1800
+      },
+      {
+        "validation_start": "2026-01-06T14:30:00+00:00",
+        "validation_end": "2026-01-06T17:35:00+00:00",
+        "training_cutoff": "2026-01-06T14:00:00+00:00",
+        "real_training_rows": 675,
+        "augmented_training_rows": 675,
+        "validation_rows": 204,
+        "target_visits_disjoint": true,
+        "purge_s": 1800
+      },
+      {
+        "validation_start": "2026-01-06T17:35:00+00:00",
+        "validation_end": "2026-01-06T23:55:01+00:00",
+        "training_cutoff": "2026-01-06T17:05:00+00:00",
+        "real_training_rows": 873,
+        "augmented_training_rows": 873,
+        "validation_rows": 222,
+        "target_visits_disjoint": true,
+        "purge_s": 1800
+      }
+    ],
+    "test_used_for_selection": false,
+    "synthetic_training_used": false,
+    "provided_cur_dev_used": false
+  },
+  "test": {
+    "rows": 353,
+    "mae_s": 80.57635053912857,
+    "zero_baseline_mae_s": 103.33711048158641,
+    "estimated_cur_dev_baseline_mae_s": 213.96033994334277,
+    "legacy_official_model_estimated_hint_mae_s": 180.08941582724665,
+    "brier_score": 0.13430006657436822,
+    "calibration_bins": [
+      {
+        "lower": 0.0,
+        "upper": 0.1,
+        "rows": 41,
+        "mean_probability": 0.07561480480764378,
+        "observed_late_rate": 0.0
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "rows": 82,
+        "mean_probability": 0.14841663433435842,
+        "observed_late_rate": 0.024390243902439025
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.3,
+        "rows": 76,
+        "mean_probability": 0.24901185971493478,
+        "observed_late_rate": 0.14473684210526316
+      },
+      {
+        "lower": 0.3,
+        "upper": 0.4,
+        "rows": 66,
+        "mean_probability": 0.3498431923332878,
+        "observed_late_rate": 0.2878787878787879
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "rows": 38,
+        "mean_probability": 0.4464385316314164,
+        "observed_late_rate": 0.5
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6,
+        "rows": 20,
+        "mean_probability": 0.5465001621950659,
+        "observed_late_rate": 0.55
+      },
+      {
+        "lower": 0.6,
+        "upper": 0.7,
+        "rows": 19,
+        "mean_probability": 0.655957528851539,
+        "observed_late_rate": 0.7894736842105263
+      },
+      {
+        "lower": 0.7,
+        "upper": 0.8,
+        "rows": 11,
+        "mean_probability": 0.7331551291359152,
+        "observed_late_rate": 0.8181818181818182
+      }
+    ],
+    "groups": {
+      "vehicle": {
+        "129964": {
+          "rows": 26,
+          "mae_s": 64.32944560569383
+        },
+        "131672": {
+          "rows": 38,
+          "mae_s": 80.77406230185659
+        },
+        "134040": {
+          "rows": 52,
+          "mae_s": 67.84809985378016
+        },
+        "132430": {
+          "rows": 32,
+          "mae_s": 100.49445290801845
+        },
+        "130238": {
+          "rows": 7,
+          "mae_s": 35.41389284070721
+        },
+        "122048": {
+          "rows": 24,
+          "mae_s": 183.60074328679102
+        },
+        "133300": {
+          "rows": 28,
+          "mae_s": 79.29686789187583
+        },
+        "135081": {
+          "rows": 55,
+          "mae_s": 85.11519283001529
+        },
+        "133957": {
+          "rows": 41,
+          "mae_s": 69.04790096394868
+        },
+        "122613": {
+          "rows": 25,
+          "mae_s": 29.779741215635795
+        },
+        "122658": {
+          "rows": 17,
+          "mae_s": 105.97153407638656
+        },
+        "130072": {
+          "rows": 2,
+          "mae_s": 10.958772339509299
+        },
+        "134494": {
+          "rows": 6,
+          "mae_s": 0.4490020598256355
+        }
+      },
+      "class": {
+        "ontime": {
+          "rows": 218,
+          "mae_s": 43.90458124503335
+        },
+        "early": {
+          "rows": 49,
+          "mae_s": 121.1018207278754
+        },
+        "late": {
+          "rows": 86,
+          "mae_s": 150.44492806080487
+        }
+      },
+      "cur_dev": {
+        "missing": {
+          "rows": 54,
+          "mae_s": 72.94009475604913
+        },
+        "present": {
+          "rows": 299,
+          "mae_s": 81.9554736571429
+        }
+      },
+      "telemetry": {
+        "good": {
+          "rows": 315,
+          "mae_s": 85.79136711583864
+        },
+        "poor": {
+          "rows": 38,
+          "mae_s": 37.34660786376872
+        }
+      }
+    },
+    "prevalence_baseline_brier": 0.18538024583662283
+  },
+  "dispatcher_eligible_points": {
+    "rows": 340,
+    "mae_s": 81.58018301389575,
+    "zero_baseline_mae_s": 103.94705882352942,
+    "estimated_cur_dev_baseline_mae_s": 193.01764705882354,
+    "legacy_official_model_estimated_hint_mae_s": 163.54669300137266,
+    "brier_score": 0.1329086256403872
+  },
+  "fresh_points": {
+    "rows": 350,
+    "mae_s": 80.02154174696126,
+    "zero_baseline_mae_s": 102.90857142857143,
+    "estimated_cur_dev_baseline_mae_s": 213.66857142857143,
+    "legacy_official_model_estimated_hint_mae_s": 179.9791560240114,
+    "brier_score": 0.13332143684447503
+  },
+  "coverage": {
+    "train_points": 1141,
+    "test_points": 353,
+    "train_estimated_hints": 932,
+    "test_estimated_hints": 299,
+    "test_observed_segment_speeds": 107,
+    "test_already_observed_targets": 10,
+    "test_fresh_points": 350
+  },
+  "acceptance": {
+    "beats_zero_baseline": true,
+    "beats_estimated_hint_baseline": true,
+    "beats_legacy_stream_behavior": true
+  },
+  "limitations": [
+    "Same-period held-out visits; unseen-day quality is not established.",
+    "Test/validate telemetry overlap. Validate outcomes are never read.",
+    "Test is reporting-only; model, thresholds and calibrator were selected on chronological train folds.",
+    "Missing estimated hints use zero only in the explicitly named hint baseline; model gets missing indicators.",
+    "Point-level diagnostics include stale/already-observed targets; dispatcher eligibility is reported separately.",
+    "Stop matching is heuristic and model factors are not proven causes."
+  ],
+  "elapsed_s": 25.59964245800802
+}

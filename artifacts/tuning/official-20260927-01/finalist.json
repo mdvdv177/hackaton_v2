@@ -1,0 +1,49 @@
+{
+  "config_id": "trial_036",
+  "mean_pooled_mae_s": 70.64956264609204,
+  "baseline_mean_pooled_mae_s": 72.29324550026381,
+  "improvement_s": 1.6436828541717716,
+  "fold_means": [
+    70.91885517993141,
+    70.38159017369306
+  ],
+  "baseline_fold_means": [
+    73.05690096214902,
+    71.53333344750547
+  ],
+  "seed_wins": 3,
+  "seeds": [
+    20260926,
+    20260927,
+    20260928
+  ],
+  "iterations": 89,
+  "inner_iterations": [
+    121,
+    93,
+    38,
+    85,
+    79,
+    273
+  ],
+  "seed": 20260926,
+  "params": {
+    "iterations": 89,
+    "depth": 5,
+    "learning_rate": 0.1,
+    "loss_function": "MAE",
+    "random_seed": 20260926,
+    "thread_count": 2,
+    "verbose": false,
+    "allow_writing_files": false,
+    "bootstrap_type": "MVS",
+    "subsample": 0.8,
+    "l2_leaf_reg": 20,
+    "random_strength": 0.0
+  },
+  "frozen_at": "2026-09-27T09:43:44.836922+00:00",
+  "feature_schema_version": "1.0.0",
+  "prediction_mode": "residual",
+  "training_cohort": "real-only",
+  "confirmation_attempts_allowed": 1
+}

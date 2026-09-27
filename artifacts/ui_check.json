@@ -1,0 +1,12 @@
+{
+  "passed": 5,
+  "checks": [
+    "start and pause replay through UI",
+    "vehicle selection and real map markers",
+    "fleet search",
+    "390px responsive layout without page overflow",
+    "map retains markers when external tiles fail"
+  ],
+  "page_errors": [],
+  "url": "http://127.0.0.1:8088"
+}

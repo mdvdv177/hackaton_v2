@@ -1,0 +1,368 @@
+{
+  "passed": true,
+  "project": "transport-ndtp-check-10e2457b5922",
+  "created_at": "2026-09-26T16:56:35.877309+00:00",
+  "environment": {
+    "docker": "ready",
+    "compose": [
+      "/opt/homebrew/bin/docker",
+      "compose"
+    ],
+    "model_profiles": [
+      "official",
+      "stream"
+    ]
+  },
+  "ports": {
+    "BACKEND_PORT": "65185",
+    "DASHBOARD_PORT": "65186",
+    "NDTP_PORT": "65187",
+    "EMULATOR_PORT": "65188"
+  },
+  "source": "supplied ndtp-telemetry-emulator:1.0",
+  "scenario_kind": "explicit synthetic current-date plan, one stationary known vehicle",
+  "images": [
+    {
+      "ID": "sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+      "ContainerName": "transport-ndtp-check-10e2457b5922-postgres-1",
+      "Repository": "postgres",
+      "Tag": "17-alpine",
+      "Platform": "linux/arm64/v8",
+      "Size": 414818382,
+      "Created": "2026-09-17T21:31:46.755310538Z",
+      "LastTagTime": "2026-09-26T15:01:00.972673133Z"
+    },
+    {
+      "ID": "sha256:0a218bbfb38cbf797c47cfddcc2ba52c2143332cad16e2a01e8f1d811293f5f4",
+      "ContainerName": "transport-ndtp-check-10e2457b5922-emulator-1",
+      "Repository": "ndtp-telemetry-emulator",
+      "Tag": "1.0",
+      "Platform": "linux/amd64",
+      "Size": 487385635,
+      "Created": "2026-09-11T08:15:14.936077625Z",
+      "LastTagTime": "2026-09-26T12:20:15.180493051Z"
+    },
+    {
+      "ID": "sha256:6734be14d777d0b92ea4bcaea24bbbef43983c19a3345ef96f5d3414ab40d2d4",
+      "ContainerName": "transport-ndtp-check-10e2457b5922-frontend-1",
+      "Repository": "transport-predictor-frontend",
+      "Tag": "local",
+      "Platform": "linux/arm64",
+      "Size": 76534614,
+      "Created": "2026-09-26T16:42:27.759538429Z",
+      "LastTagTime": "2026-09-26T16:48:51.864477634Z"
+    },
+    {
+      "ID": "sha256:7e76caa8ba3ee1519f5f78c94bef0db4e5b1f9c5905b8bc25d2dcec24db13d3d",
+      "ContainerName": "transport-ndtp-check-10e2457b5922-ml-1",
+      "Repository": "transport-predictor-python",
+      "Tag": "local",
+      "Platform": "linux/arm64",
+      "Size": 1408966920,
+      "Created": "2026-09-26T16:50:51.107549134Z",
+      "LastTagTime": "2026-09-26T16:50:51.283099134Z"
+    },
+    {
+      "ID": "sha256:7e76caa8ba3ee1519f5f78c94bef0db4e5b1f9c5905b8bc25d2dcec24db13d3d",
+      "ContainerName": "transport-ndtp-check-10e2457b5922-backend-1",
+      "Repository": "transport-predictor-python",
+      "Tag": "local",
+      "Platform": "linux/arm64",
+      "Size": 1408966920,
+      "Created": "2026-09-26T16:50:51.107549134Z",
+      "LastTagTime": "2026-09-26T16:50:51.283099134Z"
+    }
+  ],
+  "run_id": "be51887f-7a58-4288-b0dc-d3664dc97ebf",
+  "scenario_id": "load-20260926T165701120847:5fba187fcff53a859f40",
+  "elapsed_to_prediction_ui_s": 26.647383000003174,
+  "emulator_readiness_polls": 11,
+  "snapshot_polls": 93,
+  "model_version": "stream-9a3614b81bad",
+  "model_profile": "stream",
+  "prediction": {
+    "id": "be51887f-7a58-4288-b0dc-d3664dc97ebf:load-000_1790441852.704437",
+    "prediction_time": "2026-09-26T16:57:32.704437+00:00",
+    "feature_cutoff_at": "2026-09-26T16:57:32.704437+00:00",
+    "generated_at": "2026-09-26T16:57:32.868588+00:00",
+    "triggered_at": "2026-09-26T16:57:32.704564+00:00",
+    "published_at": "2026-09-26T16:57:32.878970+00:00",
+    "published_scenario_at": "2026-09-26T16:57:32.878966+00:00",
+    "publication_horizon_s": 778.241881,
+    "timing_status": "verified",
+    "current_prediction": true,
+    "display_state": "current",
+    "horizon_s": 778.41641,
+    "current_segment": null,
+    "target_segment": {
+      "id": "segment:c981c239c42d88cbf921",
+      "path_id": "path:d9920dd1c98fd45d2200",
+      "tr_id": "load-000",
+      "from_visit_id": "load-0-4",
+      "to_visit_id": "load-0-5",
+      "from_name": "Демо-остановка 5",
+      "to_name": "Демо-остановка 6",
+      "route_id": null,
+      "source_segment_id": null,
+      "geometry_kind": "schedule_schematic",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.55,
+            55.612
+          ],
+          [
+            37.55,
+            55.615
+          ]
+        ]
+      }
+    },
+    "target_visit_id": "load-0-5",
+    "target_name": "Демо-остановка 6",
+    "target_time_begin": "2026-09-26T17:10:31.120847+00:00",
+    "prediction_delay_s": 16.865732416340666,
+    "predicted_arrival_at": "2026-09-26T17:10:47.986579+00:00",
+    "p_late": 0.2205971313708593,
+    "risk": "green",
+    "source": "model",
+    "model_version": "stream-9a3614b81bad",
+    "factors": [
+      {
+        "feature": "target_lat",
+        "label": "Расположение целевой остановки",
+        "contribution_s": 15.437,
+        "value": 55.615
+      },
+      {
+        "feature": "stops_until_target",
+        "label": "Число промежуточных посещений",
+        "contribution_s": -12.645,
+        "value": 4.0
+      },
+      {
+        "feature": "max_gap_s_300s",
+        "label": "max_gap_s_300s",
+        "contribution_s": -8.701,
+        "value": 275.295563
+      }
+    ],
+    "run_id": "be51887f-7a58-4288-b0dc-d3664dc97ebf",
+    "tr_id": "load-000",
+    "target_lat": 55.615,
+    "target_lon": 37.55,
+    "model_profile": "stream",
+    "feature_schema_version": "2.0.0",
+    "cur_dev_s": 96.87915301322937,
+    "cur_dev_source": "estimated",
+    "data_quality": {
+      "history_points": 25,
+      "cur_dev_source": "estimated"
+    }
+  },
+  "vehicle": {
+    "id": "load-000",
+    "lat": 55.6,
+    "lon": 37.55,
+    "speed": 0.0,
+    "event_time": "2026-09-26T16:57:32+00:00",
+    "received_at": "2026-09-26T16:57:32.164863+00:00",
+    "packet_id": "ndtp:900000:26:6a976efe0036e36cb1a3",
+    "telemetry_age_s": 0.912414,
+    "position_age_s": 0.912552,
+    "stale": false,
+    "cur_dev_s": 96.87915301322937,
+    "cur_dev_source": "estimated",
+    "prediction": {
+      "id": "be51887f-7a58-4288-b0dc-d3664dc97ebf:load-000_1790441852.704437",
+      "prediction_time": "2026-09-26T16:57:32.704437+00:00",
+      "feature_cutoff_at": "2026-09-26T16:57:32.704437+00:00",
+      "generated_at": "2026-09-26T16:57:32.868588+00:00",
+      "triggered_at": "2026-09-26T16:57:32.704564+00:00",
+      "published_at": "2026-09-26T16:57:32.878970+00:00",
+      "published_scenario_at": "2026-09-26T16:57:32.878966+00:00",
+      "publication_horizon_s": 778.241881,
+      "timing_status": "verified",
+      "current_prediction": true,
+      "display_state": "current",
+      "horizon_s": 778.41641,
+      "current_segment": null,
+      "target_segment": {
+        "id": "segment:c981c239c42d88cbf921",
+        "path_id": "path:d9920dd1c98fd45d2200",
+        "tr_id": "load-000",
+        "from_visit_id": "load-0-4",
+        "to_visit_id": "load-0-5",
+        "from_name": "Демо-остановка 5",
+        "to_name": "Демо-остановка 6",
+        "route_id": null,
+        "source_segment_id": null,
+        "geometry_kind": "schedule_schematic",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              37.55,
+              55.612
+            ],
+            [
+              37.55,
+              55.615
+            ]
+          ]
+        }
+      },
+      "target_visit_id": "load-0-5",
+      "target_name": "Демо-остановка 6",
+      "target_time_begin": "2026-09-26T17:10:31.120847+00:00",
+      "prediction_delay_s": 16.865732416340666,
+      "predicted_arrival_at": "2026-09-26T17:10:47.986579+00:00",
+      "p_late": 0.2205971313708593,
+      "risk": "green",
+      "source": "model",
+      "model_version": "stream-9a3614b81bad",
+      "factors": [
+        {
+          "feature": "target_lat",
+          "label": "Расположение целевой остановки",
+          "contribution_s": 15.437,
+          "value": 55.615
+        },
+        {
+          "feature": "stops_until_target",
+          "label": "Число промежуточных посещений",
+          "contribution_s": -12.645,
+          "value": 4.0
+        },
+        {
+          "feature": "max_gap_s_300s",
+          "label": "max_gap_s_300s",
+          "contribution_s": -8.701,
+          "value": 275.295563
+        }
+      ],
+      "run_id": "be51887f-7a58-4288-b0dc-d3664dc97ebf",
+      "tr_id": "load-000",
+      "target_lat": 55.615,
+      "target_lon": 37.55,
+      "model_profile": "stream",
+      "feature_schema_version": "2.0.0",
+      "cur_dev_s": 96.87915301322937,
+      "cur_dev_source": "estimated",
+      "data_quality": {
+        "history_points": 25,
+        "cur_dev_source": "estimated"
+      }
+    },
+    "current_segment": null,
+    "target_segment": {
+      "id": "segment:c981c239c42d88cbf921",
+      "path_id": "path:d9920dd1c98fd45d2200",
+      "tr_id": "load-000",
+      "from_visit_id": "load-0-4",
+      "to_visit_id": "load-0-5",
+      "from_name": "Демо-остановка 5",
+      "to_name": "Демо-остановка 6",
+      "route_id": null,
+      "source_segment_id": null,
+      "geometry_kind": "schedule_schematic",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.55,
+            55.612
+          ],
+          [
+            37.55,
+            55.615
+          ]
+        ]
+      }
+    },
+    "incident_ids": []
+  },
+  "system": {
+    "backend_status": "ok",
+    "ml_status": "ready",
+    "model_version": "stream-9a3614b81bad",
+    "active_vehicles": 1,
+    "stale_vehicles": 0,
+    "queue_depth": 0,
+    "ingress_queue_depth": 0,
+    "durable_queue_depth": 0,
+    "apply_queue_depth": 0,
+    "apply_lag_s": 0,
+    "ml_queue_depth": 0,
+    "ml_inflight": 0,
+    "ingress_queue_capacity": 5000,
+    "processing_latency_p95_ms": 410.65,
+    "ingress_latency_p95_ms": 148.84725000001708,
+    "opportunity_count": 0,
+    "covered_opportunities": 0,
+    "model_covered_opportunities": 0,
+    "eligible_opportunity_count": 2,
+    "immature_opportunity_count": 2,
+    "opportunity_coverage": null,
+    "model_opportunity_coverage": null,
+    "telemetry_per_second": 0.79,
+    "last_error": null,
+    "ndtp_errors": 0,
+    "ndtp": {
+      "connections": 1,
+      "active_connections": 1,
+      "handshakes": 1,
+      "frames": 26,
+      "events": 25
+    },
+    "telemetry_count": 25,
+    "duplicates": 0,
+    "late_events": 0,
+    "unknown_devices": 0,
+    "ml_failures": 0,
+    "predictions_count": 2,
+    "processing_latency_ms": 410.65,
+    "invalid_events": 0,
+    "ignored_live_events": 0,
+    "dropped_live_events": 0,
+    "ingress_admitted": 25,
+    "ingress_committed": 25,
+    "ingress_rejected": 0,
+    "backpressure_waits": 0,
+    "suppressed_horizon": 0,
+    "suppressed_observed": 0,
+    "suppressed_stale": 0,
+    "suppressed_superseded": 0,
+    "prediction_jobs_replaced": 0,
+    "published_predictions": 2,
+    "retrospective_predictions": 0,
+    "late_alerts": 0,
+    "max_ingress_queue_depth": 1,
+    "max_ml_batch_size": 1
+  },
+  "configured_fields": {
+    "longitude": 375500000,
+    "latitude": 556000000,
+    "speedAvg": 0,
+    "course": 0,
+    "extraDopBit5": true,
+    "extraDopBit6": true,
+    "extraDopBit7": true
+  },
+  "rendered_event_id": 33,
+  "browser_errors": [],
+  "checks": [
+    "official emulator nested fields",
+    "NDTP CRC/handshake and navigation",
+    "current plan matching and estimated deviation",
+    "real stream model forecast",
+    "publication in 10–15 minute planned horizon",
+    "SSE delivery",
+    "same forecast rendered in browser"
+  ],
+  "limitations": [
+    "Synthetic scenario verifies integration; it is not a measurement of model accuracy."
+  ],
+  "owned_resources_removed": true
+}

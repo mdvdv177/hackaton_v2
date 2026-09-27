@@ -1,0 +1,10 @@
+{
+  "passed": 3,
+  "checks": [
+    "PostgreSQL checkpoint restores run, clock, vehicles and incidents",
+    "ML outage uses explicit supplied-deviation baseline without probability",
+    "ML predictions resume after service recovery"
+  ],
+  "backend_restart_to_ready_s": 3.26935475000937,
+  "limitation": "Restart uses existing images and database; excludes first image download/build time."
+}

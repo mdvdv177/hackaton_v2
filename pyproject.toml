@@ -1,0 +1,14 @@
+[project]
+name = "transport-delay-predictor"
+version = "0.1.0"
+description = "Streaming transport delay prediction and dispatcher dashboard"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
